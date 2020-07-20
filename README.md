@@ -4,7 +4,8 @@ Repository for development of web page for Ciasta, Ciasteczka company
 # Pages
 
 ## index.html
-# responsive navbar
+* [ ] responsive navbar
+* [ ] responsive footer
 
 ### Home
  * [ ] Slide show
