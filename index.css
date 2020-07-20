@@ -1,0 +1,31 @@
+:root {
+    --main-bg-primary: #1cc7e5
+}
+
+
+h1{
+    color: var(--main-bg-primary);
+}
+
+img{
+    height: auto;
+}
+
+.navbar{
+    text-decoration: none;
+    background-color: var(--main-bg-primary);
+    color: white;   
+}
+
+.nav-link{
+    color: white;
+}
+
+.navbar-brand{
+    color: white;
+
+}
+
+.navbar-toggler-icon{
+    color: white;
+}
