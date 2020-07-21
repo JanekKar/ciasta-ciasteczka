@@ -22,60 +22,64 @@
             <div class="line2"></div>
         </div>
         <ul class="nav-links">
-            <li>
-                <a href="#">MENU</a>
+            <li class="sub-menu-toggle" onmouseover="openMenu()" onmouseout="closeMenu()">
+                <a>MENU</a>
                 <div class="sub-menu-1">
-                    <ul id="categories">
-                        <li class='category-container'>
-                            <h2>Torty</h2>
-                            <ul>
-                                <li><a href="#placeholder">Torty angielski</a></li>
-                                <li><a href="#placeholder">Torty klasyczny</a></li>
-                                <li><a href="#placeholder">Torty mirror glaze</a></li>
-                                <li><a href="#placeholder">Torty bezowe</a></li>
-                                <li><a href="#placeholder">Torty specjalne</a></li>
+                    <div>
+                        <ul id="categories">
+                            <li class='category-container'>
+                                <h2>Torty</h2>
+                                <ul>
+                                    <li class='link-btn'><a href="#placeholder">Torty angielski</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Torty klasyczny</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Torty mirror glaze</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Torty bezowe</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Torty specjalne</a></li>
 
-                            </ul>
-                        </li>
-                        <li class='category-container'>
-                            <h2>Ciasta</h2>
-                            <ul>
-                                <li><a href="#placeholder">Serniki</a></li>
-                                <li><a href="#placeholder">Rolady</a></li>
-                                <li><a href="#placeholder">Placki</a></li>
-                                <li><a href="#placeholder">Szarlotki</a></li>
-                                <li><a href="#placeholder">Baby i Babki</a></li>
-                                <li><a href="#placeholder">Mazurki</a></li>
-                            </ul>
-                        </li>
-                        <li class='category-container'>
-                            <h2>Monoporcje</h2>
-                            <ul>
-                                <li><a href="#placeholder">Babeczki</a></li>
-                                <li><a href="#placeholder">Ptysie</a></li>
-                                <li><a href="#placeholder">Serniczki</a></li>
-                                <li><a href="#placeholder">Musy</a></li>
-                                <li><a href="#placeholder">Tarteletki</a></li>
+                                </ul>
+                            </li>
+                            <li class='category-container'>
+                                <h2>Ciasta</h2>
+                                <ul>
+                                    <li class='link-btn'><a href="#placeholder">Serniki</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Rolady</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Placki</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Szarlotki</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Baby i Babki</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Mazurki</a></li>
+                                </ul>
+                            </li>
+                            <li class='category-container'>
+                                <h2>Monoporcje</h2>
+                                <ul>
+                                    <li class='link-btn'><a href="#placeholder">Babeczki</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Ptysie</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Serniczki</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Musy</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Tarteletki</a></li>
 
-                            </ul>
-                        </li>
-                        <li class='category-container'>
-                            <h2>Specjalne</h2>
-                            <ul>
-                                <li><a href="#placeholder">Dzień Ojca</a></li>
-                                <li><a href="#placeholder">Dzień Matki</a></li>
-                                <li><a href="#placeholder">Boże Narodzenie</a></li>
-                                <li><a href="#placeholder">Wielkanoc</a></li>
+                                </ul>
+                            </li>
+                            <li class='category-container'>
+                                <h2>Specjalne</h2>
+                                <ul>
+                                    <li class='link-btn'><a href="#placeholder">Dzień Ojca</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Dzień Matki</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Boże Narodzenie</a></li>
+                                    <li class='link-btn'><a href="#placeholder">Wielkanoc</a></li>
 
-                            </ul>
-                        </li>
-                    </ul>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
-            <li class='link-btn'><a href="#how-to-order">JAK ZAMÓWIĆ?</a></li>
-            <li class='link-btn'><a href="#about">O MNIE</a></li>
-            <li class='link-btn'><a href="#contact">KONTAKT</a></li>
+            <li onClick="closeNav()" class='link-btn'><a href="#how-to-order">JAK ZAMÓWIĆ?</a></li>
+            <li onClick="closeNav()" class='link-btn'><a href="#about">O MNIE</a></li>
+            <li onClick="closeNav()" class='link-btn'><a href="#contact">KONTAKT</a></li>
         </ul>
     </nav>
+
 
     <main>
         <section id="home">
