@@ -48,14 +48,17 @@ const closeNav = () => {
     burger.classList.toggle('toggle');
 }
 
+
 // toggle submenu in mobile view 
 const subMenu = () => {
-    const subMenuToggle = document.querySelector('.sub-menu-toggle');
-    const subMenu = subMenuToggle.querySelector('.sub-menu-toggle .sub-menu-1');
-
-    subMenuToggle.addEventListener('click', () => {
-        subMenu.classList.toggle('sub-menu-active');
-    })
+    if(is_touch_device()){
+        const subMenuToggle = document.querySelector('.sub-menu-toggle');
+        const subMenu = subMenuToggle.querySelector('.sub-menu-toggle .sub-menu-1');
+    
+        subMenuToggle.addEventListener('click', () => {
+            subMenu.classList.toggle('sub-menu-active');
+        })
+    }
 }
 
 // not working
@@ -88,7 +91,7 @@ function set_sticky(){
 
     const nav = document.querySelector('nav');
 
-    if(!is_touch_device){
+    if(!is_touch_device()){
         nav.classList.add('sticky');
     }else{
         nav.classList.remove('sticky');
@@ -120,22 +123,6 @@ function is_touch_device() {
 }
 
 console.log(is_touch_device());
-
-
-// var coll = document.getElementsByClassName("collapsible");
-// var i;
-
-// for (i = 0; i < coll.length; i++) {
-//   coll[i].addEventListener("click", function() {
-//     this.classList.toggle("active");
-//     var content = this.nextElementSibling;
-//     if (content.style.display === "block") {
-//       content.style.display = "none";
-//     } else {
-//       content.style.display = "block";
-//     }
-//   });
-// }
 
 set_sticky();
 subMenu();
