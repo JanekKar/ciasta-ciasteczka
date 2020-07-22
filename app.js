@@ -2,7 +2,7 @@
 const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
-    const subMenu = document.querySelector('.sub-menu-1');
+    const subMenu = document.querySelector('.sub-menu');
     //const categoryContainers = document.querySelectorAll('.category-container');
 
     burger.addEventListener('click', () => {
@@ -23,7 +23,7 @@ const navSlide = () => {
 // open submenu in desktop view
 const openMenu = () => {
     if (!is_touch_device()) {
-        const subMenu = document.querySelector('.sub-menu-1');
+        const subMenu = document.querySelector('.sub-menu');
         subMenu.classList.add('active');
     }
 }
@@ -31,7 +31,7 @@ const openMenu = () => {
 // close submenu in desktop view
 const closeMenu = () => {
     if (!is_touch_device()) {
-        const subMenu = document.querySelector('.sub-menu-1');
+        const subMenu = document.querySelector('.sub-menu');
         subMenu.classList.remove('active');
     }
 }
@@ -40,7 +40,7 @@ const closeMenu = () => {
 const closeNav = () => {
 
     const nav = document.querySelector('.nav-links');
-    const subMenu = document.querySelector('.sub-menu-1');
+    const subMenu = document.querySelector('.sub-menu');
     const burger = document.querySelector('.burger');
 
     subMenu.classList.remove('menu-active');
@@ -53,7 +53,7 @@ const closeNav = () => {
 const subMenu = () => {
     if (is_touch_device()) {
         const subMenuToggle = document.querySelector('.sub-menu-toggle');
-        const subMenu = subMenuToggle.querySelector('.sub-menu-toggle .sub-menu-1');
+        const subMenu = subMenuToggle.querySelector('.sub-menu-toggle .sub-menu');
 
         subMenuToggle.addEventListener('click', () => {
             subMenu.classList.toggle('sub-menu-active');

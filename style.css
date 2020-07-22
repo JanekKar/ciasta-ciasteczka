@@ -3,7 +3,8 @@
     --main-bg-primary: #1cc7e5;
     --main-bg-darker-primary: #17a7c0;
     --main-bg-accent: #ff6ee7;
-    --main-bg-section: #ceb490;
+    --main-bg-section: #d6cab9;
+    --main-bg-pink: #ee9bc1;
 
     /* Dimensions */
     --nav-height-desktop: 6vh;
@@ -16,7 +17,6 @@ html {
 
 body {
     font-size: 15px;
-    background-color: rgb(228, 191, 146);
 }
 
 * {
@@ -33,10 +33,16 @@ nav {
     height: var(--nav-height-desktop);
     z-index: 1;
 
-    background-color: var(--main-bg-primary);
-    box-shadow: 0px 5px 5px grey;
-}
+    /* background: rgb(28,199,229);
+    background: radial-gradient(circle, rgba(28,199,229,1) 55%, rgba(238,155,193,1) 98%); */
 
+    background: rgb(28,199,229);
+    background: linear-gradient(90deg, rgba(28,199,229,1) 52%, rgba(238,155,193,1) 98%);
+
+    /* background-color: var(--main-bg-primary); */
+    box-shadow: 0px 5px 5px grey;
+
+}
 
 main {
     width: 65%;
@@ -46,11 +52,8 @@ main {
     -webkit-box-shadow: 0 0 10px gray;
     box-shadow: 0 0 10px gray;
     padding-top: 5vh;
+    background-color: var(--main-bg-section);
 
-}
-
-.logo-img {
-    width: 18vh;
 }
 
 .logo-container {
@@ -58,6 +61,16 @@ main {
     left: 5%;
     top: 0;
     z-index: 2;
+    width: 150px;
+}
+
+.logo-container > .logo{
+    width: fit-content;
+}
+
+.logo-container >.logo > img{
+    max-height: 100%;
+    max-width: 100%;
 }
 
 
@@ -71,10 +84,11 @@ main {
 .nav-links {
     display: flex;
     justify-content: space-around;
+    max-width: 1024px;
     width: 40%;
 }
 
-.nav-links li {
+.nav-links > li {
     list-style: none;
     padding-top: 2vh;
     height: var(--nav-height-desktop);
@@ -85,7 +99,7 @@ main {
 .nav-links span {
     text-decoration: none;
     letter-spacing: 2px;
-    font-weight: 600;
+    font-weight: 550;
     font-size: 1.2rem;
     font-family: 'Roboto Condensed', sans-serif;
     text-transform: capitalize;
@@ -97,7 +111,7 @@ main {
     border-bottom: 2px solid white;
 }
 
-.sub-menu-1 {
+.sub-menu {
     display: block;
     position: absolute;
     left: 0;
@@ -119,15 +133,24 @@ main {
 }
 
 
-.sub-menu-1 #categories {
+.sub-menu > ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
     width: 70%;
     margin: auto;
-    min-height: 28vh;
+    min-height: 20vh;
     height: auto;
+
+    padding: 1vh 0 1vh 0;
+
+
+    max-width: 1024px;
+}
+
+.sub-menu > ul li{
+    list-style: none;
 }
 
 .category-container{
@@ -151,6 +174,12 @@ main {
     padding:0.5vh 0;
     margin: 0;
     height: auto;
+    padding: 0;
+}
+
+.category-container a{
+    height: auto;
+    padding: 0;
 }
 
 .category-container a span{
@@ -166,6 +195,9 @@ main {
 .burger {
     display: none;
     cursor: pointer;
+    position: absolute;
+    top: 1vh;
+    left: 2vh;
 
 }
 
@@ -180,7 +212,13 @@ main {
 }
 
 footer {
-    background-color: var(--main-bg-primary);
+    /* background: rgb(28,199,229);
+    background: radial-gradient(circle, rgba(28,199,229,1) 55%, rgba(238,155,193,1) 98%); */
+
+    background: rgb(28,199,229);
+    background: linear-gradient(90deg, rgba(28,199,229,1) 52%, rgba(238,155,193,1) 98%);
+
+    /* background-color: var(--main-bg-primary); */
     display: grid;
     grid-template-columns: auto 75% auto;
 
@@ -227,20 +265,15 @@ footer {
     main {
         width: 80%;
         margin: auto;
-        background-color: whitesmoke;
         -webkit-box-shadow: 0 0 10px gray;
         box-shadow: 0 0 10px gray;
 
     }
 
-    .sub-menu-1 #categories {
+    .sub-menu > ul {
 
         padding-left: 10vh;
         width: 90%;
-    }
-
-    .logo-img {
-        width: 15vh;
     }
 
 
@@ -253,7 +286,7 @@ footer {
 
 @media screen and (max-width: 860px){
     
-    .sub-menu-1 #categories {
+    .sub-menu > ul {
 
         padding-left: 15vh;
         width: 100%;
@@ -267,35 +300,33 @@ footer {
 
     nav {
         display: block;
-
-        z-index: 1;
-        padding: 2%;
+        box-shadow: 0px 5px 5px grey;
+        top: 0;
+        width: 100%;
+        position: absolute;
     }
 
     main {
-        z-index: 0;
         width: 100%;
         margin: auto;
-        background-color: whitesmoke;
-        box-shadow: none;
-        -webkit-box-shadow: none;
-
+        top: 5vh;
+        position: absolute;
+        /* box-shadow: none;
+        -webkit-box-shadow: none; */
     }
 
     .logo-container {
         position: absolute;
         top: 0;
-        z-index: 1;
-
-        left: auto;
+        z-index: 2;
         right: 10%;
+        left: auto;
+        width: 20%;
     }
 
-    .logo-img {
-        width: 13vh;
-    }
 
     .nav-links {
+        z-index: 1;
         display: block;
         width: 100%;
         height: auto;
@@ -308,7 +339,7 @@ footer {
         padding-left: 0;
         margin: auto;
 
-        background-color: var(--main-bg-darker-primary);
+        background-color: var(--main-bg-pink);
         text-align: center;
         transition: transform 0.5s ease-in;
     }
@@ -326,6 +357,7 @@ footer {
         margin: auto;
         padding: 1vh 2vw 1vh 2vw;
         width: 100vw;
+        border-bottom: 1px solid gray ;
     }
 
 
@@ -334,7 +366,7 @@ footer {
         width: 100vh;
     }
 
-    .sub-menu-1 {
+    .sub-menu {
         display: block;
         box-shadow: none;
         position: relative;
@@ -346,7 +378,8 @@ footer {
         top: 0vh;
     }
 
-    .sub-menu-1 #categories {
+    .sub-menu > ul {
+        padding-top: 0;
         display: block;
         margin-left: 0;
         flex-direction: column;
@@ -428,6 +461,7 @@ footer {
 
 
 section {
+    z-index: 0;
     min-height: 100vh;
     display: block;
     scroll-behavior: smooth;
@@ -442,6 +476,11 @@ section {
 .section-odd {
     background-color: var(--main-bg-section);
 }
+
+
+
+/* Carousel - slideshow */
+
 
 /* The dots/bullets/indicators */
 .dot {
@@ -553,10 +592,18 @@ section {
 
 
 
+/* 
+    TODO
+    media @ min-width 1200
+    media @ min-width 992
+    media @ min-width 768
+            max-width 767
 
+ */
 
 
     /* debuging */
-.nav-links *{
+
+/* .nav-links *{
     border: 1px solid black;
-}
+} */ 
