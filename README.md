@@ -4,14 +4,14 @@ Repository for development of web page for Ciasta, Ciasteczka company
 # Pages
 
 ## index.html
-* [ ] responsive navbar
+* [*] responsive navbar
 * [ ] responsive footer
 
 ### Home
- * [ ] Slide show
-   * [ ] Indicators
-   * [ ] Automatic slideshow
-   * [ ] Arrows for next and previous
+ * [*] Slide show
+   * [*] Indicators
+   * [*] Automatic slideshow
+   * [*] Arrows for next and previous
  * [ ] Slogan
  * [ ] Some vague information about company
   

@@ -61,6 +61,18 @@ const subMenu = () => {
     }
 }
 
+const openCategoryContainer = () => {
+    if (is_touch_device()){
+        const categoryToggler = document.querySelectorAll('.category-container');
+
+        categoryToggler.forEach( toggler =>{
+            toggler.addEventListener('click', () => {
+                toggler.querySelector('ul').toggle('active');
+            })
+        });
+    }
+}
+
 // not working
 const currentSection = () => {
     let mainNavLinks = document.querySelectorAll('nav ul li a');
@@ -122,7 +134,7 @@ function is_touch_device() {
     }
 }
 
-
+openCategoryContainer();
 set_sticky();
 subMenu();
 navSlide();
