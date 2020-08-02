@@ -218,12 +218,12 @@ footer {
     margin: auto;
 }
 
-.footer-links{
+.footer-links {
     background-color: var(--main-bg-primary);
 }
 
 
-.links-container{
+.links-container {
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -237,7 +237,7 @@ footer {
 
 }
 
-.links-container > a{
+.links-container>a {
     display: block;
     text-decoration: none;
     height: auto;
@@ -247,7 +247,7 @@ footer {
 
 }
 
-.links-container > a > span{
+.links-container>a>span {
     color: whitesmoke;
     display: block;
     font-size: 1.2rem;
@@ -255,7 +255,7 @@ footer {
 }
 
 
-.links-container > a:hover span{
+.links-container>a:hover span {
     border-bottom: 1px solid white;
 }
 
@@ -272,12 +272,13 @@ footer {
 }
 
 
-.decoration-line{
+.decoration-line {
     width: 60%;
     margin: 3vh auto 3vh auto;
     border-top: 1px solid white;
 }
-.vertical-line{
+
+.vertical-line {
     height: auto;
     margin: 5vh auto 5vh auto;
     width: 2px;
@@ -312,7 +313,8 @@ footer {
 
     }
 
-    .footer-container, .links-container {
+    .footer-container,
+    .links-container {
         width: 80%;
     }
 
@@ -433,7 +435,7 @@ footer {
         position: unset;
     }
 
-    .sub-menu > ul > li > h2 {
+    .sub-menu>ul>li>h2 {
         padding: 1vh;
         border-bottom: 1px solid gray;
     }
@@ -446,7 +448,8 @@ footer {
         width: 100vh;
         position: unset;
     }
-/* 
+
+    /* 
 
     .category-container.active > ul{
         height: auto;
@@ -478,7 +481,7 @@ footer {
         width: 100%;
     }
 
-    .vertical-line{
+    .vertical-line {
         display: none;
         visibility: hidden;
     }
@@ -538,13 +541,13 @@ section {
     margin: auto;
 }
 
-#contact iframe{
+#contact iframe {
     width: 100%;
     height: 100%;
     border-radius: 25px;
 }
 
-.map-wrapper{
+.map-wrapper {
     max-height: 500px;
     max-width: 500px;
 
@@ -669,23 +672,42 @@ section {
     background-color: rgba(0, 0, 0, 0.8)
 }
 
-.map{
-    width: 60%;
+
+
+#contact>.section-container{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+#contact>.section-container>.column{
+    width: 50%;
+}
+
+.phone>span{
+    font-size: 2rem;
+    color: white;
+}
+
+.map {
+    width: 50%;
+}
+
+.icon{
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 
-
-
-.icon {
+.icon-container {
     display: inline-block;
+    background-color: var(--main-bg-darker-primary);
+    border: 1px solid white;
     width: 70px;
     height: 70px;
-    background: red;
-    mask-size: cover;
-  }
-
-.icon-hone path{
-    fill: red;
+    border-radius: 50%;
+    padding: 11px 11px;
 }
 
 
