@@ -1,0 +1,9 @@
+{
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--disable=C0111", // missing docstring
+        "--load-plugins=pylint_django",
+    ],
+    "python.formatting.provider": "autopep8",
+    "python.pythonPath": "django-mysql/bin/python"
+}
