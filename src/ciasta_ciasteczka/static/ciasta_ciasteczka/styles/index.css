@@ -1,0 +1,186 @@
+section {
+    z-index: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-behavior: smooth;
+    padding: 10vh 2vw 10vh 2vw;
+    padding-top: 2vh;
+
+    border-bottom: 1px solid black;
+    /* background: rgb(235,210,221);
+    background: linear-gradient(0deg, rgba(235,210,221,1) 7%, rgba(204,228,232,1) 50%); */
+    background-color: whitesmoke;
+}
+
+.section-container {
+    height: auto;
+    margin: auto;
+}
+
+/* Google maps map */
+#contact iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.map-wrapper {
+    max-height: 500px;
+    max-width: 500px;
+
+    height: 40vw;
+    width: 40vw;
+    border: 2px solid white;
+    background-color: white;
+    border-radius: 25px;
+}
+
+
+
+/* Carousel - slideshow */
+/* The dots/bullets/indicators */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dots-container {
+    text-align: center;
+    padding: 1vh 0 1vh 0;
+}
+
+.active-dot {
+    background-color: #717171;
+}
+
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* Slideshow container */
+.slideshow-container img {
+    z-index: 0;
+    width: 100%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.slideshow-container {
+    z-index: 0;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* Caption text */
+.caption-text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0px;
+    border-radius: 3px 3px 3px 3px
+}
+
+.prev {
+    left: 0px;
+    border-radius: 3px 3px 3px 3px
+}
+
+.prev:hover,
+.next:hover {
+    color: #f2f2f2;
+    background-color: rgba(0, 0, 0, 0.8)
+}
+
+
+
+#contact>.section-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+.map {
+    width: 50%;
+}
+
+
+
+/* 
+    TODO
+    media @ min-width 1200
+    media @ min-width 992
+    media @ min-width 768
+            max-width 767
+
+
+    usunąć lub poprawić funkcję otwierająca category-container
+
+ */
+
+
+/* debuging */
+
+/* .nav-links *{
+    border: 1px solid black;
+} */

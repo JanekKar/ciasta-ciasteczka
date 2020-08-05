@@ -25,12 +25,16 @@ SECRET_KEY = 'i80^qty@$f1+3ysmccuahn=j2^$10)%2)&y41s&473bev*1hax'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '192.168.1.16',
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'ciasta_ciasteczka.apps.CiastaCiasteczkaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,13 +80,13 @@ WSGI_APPLICATION = 'cc_project.wsgi.application'
 DATABASES = {
     'default': {
         'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ciasta-db',
-        'USER': 'admin',
-        'PASSWORD': 'admin',
-        'HOST': 'db',
-        'PORT': 3306,
-    }
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'ciasta-db',
+            'USER': 'admin',
+            'PASSWORD': 'admin',
+            'HOST': 'db',
+            'PORT': 3306,
+        }
     }
 }
 

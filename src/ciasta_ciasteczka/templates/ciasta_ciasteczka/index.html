@@ -1,0 +1,116 @@
+
+{% extends 'ciasta_ciasteczka/base.html' %}
+{% load static %}
+
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/index.css' %} ">
+{% endblock styles %}
+
+{% block main-content %}
+<section id="home">
+            <div class="section-container">
+                <div class="carousel-container">
+                    <div class="slideshow-container">
+                        <div class="slide fade">
+                            <img src=" {% static 'ciasta_ciasteczka/assets/banner/temp-banner.webp' %}" alt="" />
+                            <div class="caption-text">Text1</div>
+                        </div>
+                        <div class="slide fade">
+                            <img src=" {% static 'ciasta_ciasteczka/assets/banner/temp-banner.webp' %}" alt="" />
+                            <div class="caption-text">Text2</div>
+                        </div>
+                        <div class="slide fade">
+                            <img src=" {% static 'ciasta_ciasteczka/assets/banner/temp-banner.webp' %}" alt="" />
+                            <div class="caption-text">Text3</div>
+                        </div>
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                </div>
+                <div class="dots-container">
+                    <span onclick="currentSlide(1)" class="dot"></span>
+                    <span onclick="currentSlide(2)" class="dot"></span>
+                    <span onclick="currentSlide(3)" class="dot"></span>
+                </div>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
+                    justo quis diam dictum rhoncus. Donec scelerisque metus vel magna
+                    accumsan blandit. Proin ac neque a lectus hendrerit ultricies ac a
+                    lorem. Pellentesque consequat risus quis velit porta, ac venenatis
+                    mi euismod. Maecenas leo libero, tincidunt ut purus vitae, feugiat
+                    tristique nisl. Curabitur turpis arcu, sodales vel nisi quis,
+                    pretium porttitor purus. Sed et iaculis nulla. Mauris dui risus,
+                    rutrum vitae dignissim non, scelerisque nec enim. Mauris dapibus ex
+                    ut urna vulputate posuere. Pellentesque habitant morbi tristique
+                    senectus et netus et malesuada fames ac turpis egestas. In quis
+                    lobortis dolor. Praesent dui ex, pretium in magna vel, aliquam
+                    finibus magna.
+                </p>
+            </div>
+        </section>
+
+        <section id="how-to-order">
+            <div class="section-container">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
+                    justo quis diam dictum rhoncus. Donec scelerisque metus vel magna
+                    accumsan blandit. Proin ac neque a lectus hendrerit ultricies ac a
+                    lorem. Pellentesque consequat risus quis velit porta, ac venenatis
+                    mi euismod. Maecenas leo libero, tincidunt ut purus vitae, feugiat
+                    tristique nisl. Curabitur turpis arcu, sodales vel nisi quis,
+                    pretium porttitor purus. Sed et iaculis nulla. Mauris dui risus,
+                    rutrum vitae dignissim non, scelerisque nec enim. Mauris dapibus ex
+                    ut urna vulputate posuere. Pellentesque habitant morbi tristique
+                    senectus et netus et malesuada fames ac turpis egestas. In quis
+                    lobortis dolor. Praesent dui ex, pretium in magna vel, aliquam
+                    finibus magna.
+                </p>
+            </div>
+        </section>
+        <section id="about">
+            <div class="section-container">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sed
+                    justo quis diam dictum rhoncus. Donec scelerisque metus vel magna
+                    accumsan blandit. Proin ac neque a lectus hendrerit ultricies ac a
+                    lorem. Pellentesque consequat risus quis velit porta, ac venenatis
+                    mi euismod. Maecenas leo libero, tincidunt ut purus vitae, feugiat
+                    tristique nisl. Curabitur turpis arcu, sodales vel nisi quis,
+                    pretium porttitor purus. Sed et iaculis nulla. Mauris dui risus,
+                    rutrum vitae dignissim non, scelerisque nec enim. Mauris dapibus ex
+                    ut urna vulputate posuere. Pellentesque habitant morbi tristique
+                    senectus et netus et malesuada fames ac turpis egestas. In quis
+                    lobortis dolor. Praesent dui ex, pretium in magna vel, aliquam
+                    finibus magna.
+                </p>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="section-container">
+                <div class="column">
+                    <div class="phone">
+                        <div class="icon-container">
+                            <img class="icon" src="{% static 'ciasta_ciasteczka/icons/phone.svg' %}" alt="" height="64px" />
+                        </div>
+                        <a href="tel:503-178-197">503-178-197</a>
+                    </div>
+                    <div class="icon-container">
+                        <img class="icon" src="{% static 'ciasta_ciasteczka/icons/facebook.svg' %}" alt="" height="64px" />
+                    </div>
+                    <div class="icon-container">
+                        <img class="icon" src="{% static 'ciasta_ciasteczka/icons/instagram.svg' %}" alt="" height="64px" />
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d738.3327324675372!2d23.15160418695224!3d53.15377734686091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ffc4779f19bb7%3A0xd01d632dd02233b4!2sKowie%C5%84ska%204%2C%2015-107%20Bia%C5%82ystok!5e1!3m2!1spl!2spl!4v1595938857561!5m2!1spl!2spl"
+                            width="500" height="500" frameborder="0" style="border: 0;" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock main-content %}
