@@ -163,50 +163,54 @@
             </div>
         </div>
         <div class="columns-container">
-            <div class="column">
-                <h2>Informacje</h2>
-                <p>Ciasta ciasteczka, to mała firma wykonująca wypieki na zamówienie.</p>
-            </div>
-            <div class="vertical-line"></div>
-            <div class="column">
-                <h2>Kontakt</h2>
-                <div class="phone-wrapper">
-                    <div class="icon-wrapper">
-                        <img class="icon" src="{% static 'ciasta_ciasteczka/icons/phone.svg' %}" alt="" height="64px"
-                            width="64px" />
-                    </div>
-                    <a href="tel:503-178-197">503-178-197</a>
-                </div>
-                <div class="address-wrapper">
-                    <div class="icon-wrapper">
-                        <img class="icon" src="{% static 'ciasta_ciasteczka/icons/home.svg' %}" alt="" height="64px"
-                            width="64px" />
-                    </div>
-                    <p>
-                        ul. Kowieńska 4<br>Białystok<br>Wejście od strony ulicy
-                    </p>
+            <div class="column-wrapper">
+                <div class="column" id="information">
+                    <h2>Informacje</h2>
+                    <p>Ciasta ciasteczka, to mała firma wykonująca wypieki na zamówienie.</p>
                 </div>
             </div>
             <div class="vertical-line"></div>
-            <div class="column">
-                <h2>Nawigacja</h2>
-                <div class="links-container">
-                    <a href="/"><span>Strona Głowna</span></a>
-                    <a href="#placeholder"><span>Manu</span></a>
-                    <a href="#placeholder"><span>Jak zamawiać?</span></a>
-                    <a href="#placeholder"><span>O mnie</span></a>
-                    <a href="#placeholder"><span>Kontakt</span></a>
+            <div class="column-wrapper id=" contact"">
+                <div class="column">
+
+                    <h2>Kontakt</h2>
+                    <div class="phone-wrapper">
+                        <div class="icon-wrapper">
+                            <img class="icon" src="{% static 'ciasta_ciasteczka/icons/phone.svg' %}" alt=""
+                                height="64px" width="64px" />
+                        </div>
+                        <a href="tel:503-178-197">503-178-197</a>
+                    </div>
+                    <div class="address-wrapper">
+                        <div class="icon-wrapper">
+                            <img class="icon" src="{% static 'ciasta_ciasteczka/icons/home.svg' %}" alt="" height="64px"
+                                width="64px" />
+                        </div>
+                        <p>
+                            ul. Kowieńska 4<br>Białystok<br>Wejście od strony ulicy
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vertical-line"></div>
+            <div class="column-wrapper">
+                <div class="column">
+                    <h2>Nawigacja</h2>
+                    <div class="links-container">
+                        <a href="/"><span>Strona Głowna</span></a>
+                        <a href="#placeholder"><span>Manu</span></a>
+                        <a href="#placeholder"><span>Jak zamawiać?</span></a>
+                        <a href="#placeholder"><span>O mnie</span></a>
+                        <a href="#placeholder"><span>Kontakt</span></a>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="copyright">
+            <span>&copy; Copyright 2020, Ciasta Ciasteczka</span>
+            <span>Created by Jan Karaszewski</span>
+        </div>
     </footer>
-
-    <div class="copyright">
-        <p>
-            © Ciasta, Ciasteczka Pracownia Cisat i Tortów Katarzyna Knaś-Karaszewska 2020
-        </p>
-        <p>Created by Jan Karaszewski</p>
-    </div>
 
     <script src=" {% static 'ciasta_ciasteczka/scripts/base.js' %} "></script>
 </body>

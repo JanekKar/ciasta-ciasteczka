@@ -9,13 +9,7 @@ const navSlide = () => {
         nav.classList.toggle('nav-active');
         // Burger Animation 
         burger.classList.toggle('toggle');
-        subMenu.classList.remove('sub-menu-active');
-
-        // // If media query matches
-        // subMenu.classList.toggle('collapsible');
-        // categoryContainers.forEach( element => {
-        //     element.classList.toggle('collapsible')
-        // });
+        subMenu.classList.remove('active');
     });
 
 }
@@ -37,13 +31,13 @@ const closeMenu = () => {
 }
 
 //close navigation slide
-const closeNav = () => {
+function closeNav() {
 
     const nav = document.querySelector('.nav-links');
     const subMenu = document.querySelector('.sub-menu');
     const burger = document.querySelector('.burger');
 
-    subMenu.classList.remove('menu-active');
+    subMenu.classList.remove('active');
     nav.classList.remove('nav-active');
     burger.classList.toggle('toggle');
 }
@@ -56,7 +50,7 @@ const subMenu = () => {
         const subMenu = subMenuToggle.querySelector('.sub-menu-toggle .sub-menu');
 
         subMenuToggle.addEventListener('click', () => {
-            subMenu.classList.toggle('sub-menu-active');
+            subMenu.classList.toggle('active');
         })
     }
 }
