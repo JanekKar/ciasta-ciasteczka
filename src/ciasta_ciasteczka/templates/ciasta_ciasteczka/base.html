@@ -6,11 +6,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ciasta ciasteczka</title>
+    <link rel="icon" href=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %} " />
     <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/base.css' %} " />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"/>
     {% block styles %}
     {% endblock styles %}
-    <link rel="icon" href=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %} " />
+    
 </head>
 
 <body>
@@ -24,119 +25,117 @@
     </div>
 
     <div id="top"></div>
-    <header>
-        <nav>
-            <div class="logo-container">
-                <a class="logo" href="#top">
-                    <img class="logo-img" src=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %}"
-                        alt="" /></a>
-            </div>
-            <div class="burger">
-                <div class="line0"></div>
-                <div class="line1"></div>
-                <div class="line2"></div>
-            </div>
-            <ul class="nav-links">
-                <li class="sub-menu-toggle" onmouseover="openMenu()" onmouseout="closeMenu()">
-                    <a>menu</a>
-                    <div class="sub-menu">
-                        <ul>
-                            <li class="category-container">
-                                <h2>Torty</h2>
-                                <ul>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Torty angielski</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Torty klasyczny</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Torty mirror glaze</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Torty bezowe</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Torty specjalne</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="category-container">
-                                <h2>Ciasta</h2>
-                                <ul>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Serniki</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Rolady</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Placki</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Szarlotki</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Baby i Babki</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Mazurki</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="category-container">
-                                <h2>Monoporcje</h2>
-                                <ul>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Babeczki</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Ptysie</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Serniczki</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Musy</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Tarteletki</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="category-container">
-                                <h2>Specjalne</h2>
-                                <ul>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Dzień Ojca</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Dzień Matki</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Boże Narodzenie</span></a>
-                                    </li>
-                                    <li class="link-btn">
-                                        <a href="#placeholder"><span>Wielkanoc</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+    <nav>
+        <div class="logo-container">
+            <a class="logo" href="/#top">
+                <img class="logo-img" src=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %}"
+                    alt="" /></a>
+        </div>
+        <div class="burger">
+            <div class="line0"></div>
+            <div class="line1"></div>
+            <div class="line2"></div>
+        </div>
+        <ul class="nav-links">
+            <li class="sub-menu-toggle" onmouseover="openMenu()" onmouseout="closeMenu()">
+                <a>menu</a>
+                <div class="sub-menu">
+                    <ul>
+                        <li class="category-container">
+                            <h2>Torty</h2>
+                            <ul>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Torty angielski</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Torty klasyczny</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Torty mirror glaze</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Torty bezowe</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Torty specjalne</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="category-container">
+                            <h2>Ciasta</h2>
+                            <ul>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Serniki</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Rolady</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Placki</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Szarlotki</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Baby i Babki</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Mazurki</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="category-container">
+                            <h2>Monoporcje</h2>
+                            <ul>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Babeczki</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Ptysie</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Serniczki</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Musy</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Tarteletki</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="category-container">
+                            <h2>Specjalne</h2>
+                            <ul>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Dzień Ojca</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Dzień Matki</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Boże Narodzenie</span></a>
+                                </li>
+                                <li class="link-btn">
+                                    <a href="#placeholder"><span>Wielkanoc</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </li>
 
-                <li onClick="closeNav()" class="link-btn">
-                    <a href="#how-to-order"><span>jak zamówić?</span></a>
-                </li>
-                <li onClick="closeNav()" class="link-btn">
-                    <a href="#about"><span>o mnie</span></a>
-                </li>
-                <li onClick="closeNav()" class="link-btn">
-                    <a href="#contact"><span>kontak</span></a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+            <li onClick="closeNav()" class="section-btn">
+                <a href="#how-to-order"><span>jak zamówić?</span></a>
+            </li>
+            <li onClick="closeNav()" class="section-btn">
+                <a href="#about"><span>o mnie</span></a>
+            </li>
+            <li onClick="closeNav()" class="section-btn">
+                <a href="#contact"><span>kontakt</span></a>
+            </li>
+        </ul>
+    </nav>
 
     <main>
         {% block main-content %}
@@ -211,8 +210,8 @@
             <span>Created by Jan Karaszewski</span>
         </div>
     </footer>
-
-    <script src=" {% static 'ciasta_ciasteczka/scripts/base.js' %} "></script>
 </body>
-
+    <script src=" {% static 'ciasta_ciasteczka/scripts/base.js' %} "></script>
+    {% block scripts %}
+    {% endblock scripts %}
 </html>

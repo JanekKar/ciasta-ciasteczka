@@ -5,7 +5,7 @@ Repository for development of web page for Ciasta, Ciasteczka company
 
 ## index.html
 * [x] responsive navbar
-* [ ] responsive footer
+* [x] responsive footer
 
 ### Home
  * [x] Slide show
@@ -32,7 +32,7 @@ Repository for development of web page for Ciasta, Ciasteczka company
 * [ ] Filters
 
 
-## how*to*order.html
+## how-to-order.html
 * [ ] Step by step instruction
 
 ## Product Page
