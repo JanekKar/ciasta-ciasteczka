@@ -20,11 +20,11 @@ Repository for development of web page for Ciasta, Ciasteczka company
  * [ ] Pictures of kitchen??
 
 ### Contact
- * [ ] Phone
+ * [x] Phone
  * [ ] Facebook link (or page plugin [link](https://developers.facebook.com/docs/plugins/page*plugin/))
  * [ ] Instagram Link
- * [ ] Google map with location pined ([link](https://support.google.com/maps/answer/144361?co=GENIE.Platform%3DDesktop&hl=en))
- * [ ] Address
+ * [x] Google map with location pined ([link](https://support.google.com/maps/answer/144361?co=GENIE.Platform%3DDesktop&hl=en))
+ * [x] Address
 
 
 ## menu.html

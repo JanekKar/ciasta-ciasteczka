@@ -109,9 +109,7 @@ const hideLoading = () => {
 }
 
 let mainNavLinks = document.querySelectorAll(".section-btn a");
-console.log(mainNavLinks);
 let mainSections = document.querySelectorAll("main section");
-console.log(mainSections);
 let lastId;
 let cur = [];
 

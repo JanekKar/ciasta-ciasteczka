@@ -2,12 +2,11 @@
     /* Colors */
     --main-bg-primary: #1cc7e5;
     --main-bg-darker-primary: #17a7c0;
+    --main-bg-accent: #ee9bc1;
     --cookie: #ca915b;
+    --section-background: rgb(255, 220, 181);
 
-    --main-bg-dark-primary: #0895ad;
-    --main-bg-accent: #ff6ee7;
     --main-bg-section: #d6cab9;
-    --main-bg-pink: #ee9bc1;
 
     /* Dimensions */
     --nav-height-desktop: 6vh;
@@ -49,13 +48,9 @@ nav {
 }
 
 main {
-    width: 65%;
-    max-width: 1024px;
+    width: 100%;
     margin: auto;
     background-color: whitesmoke;
-    -webkit-box-shadow: 0 0 10px gray;
-    box-shadow: 0 0 10px gray;
-    background-color: var(--main-bg-section);
 }
 
 /* Container for logo image */
@@ -221,7 +216,7 @@ footer>.social-media-wrapper {
     width: 100%;
     padding: 0.5vh;
 
-    background-color: var(--main-bg-pink);
+    background-color: var(--main-bg-accent);
 }
 
 .social-media {
@@ -344,9 +339,10 @@ footer #contact {
 }
 
 .horizontal-line {
-    width: 60%;
-    margin: 3vh auto 3vh auto;
-    border-top: 1px solid white;
+    width: auto;
+    margin: 2vh 0 2vh 0;
+    height: 1px;
+    background-color: white;
 }
 
 .vertical-line {
@@ -369,13 +365,6 @@ footer #contact {
     .nav-links {
         width: 70%;
         padding-left: 10vw;
-    }
-
-    main {
-        width: 80%;
-        margin: auto;
-        -webkit-box-shadow: 0 0 10px grey;
-        box-shadow: 0 0 10px grey;
     }
 
     footer .columns-container,
@@ -414,12 +403,6 @@ footer #contact {
         position: absolute;
     }
 
-    main {
-        width: 100%;
-        margin: none;
-        margin-top: 5vh;
-    }
-
     footer {
         width: auto;
         height: auto;
@@ -450,7 +433,7 @@ footer #contact {
         padding-left: 0;
         margin: auto;
 
-        background-color: var(--main-bg-pink);
+        background-color: var(--main-bg-accent);
         text-align: center;
         transition: transform 0.25s ease-in;
     }
