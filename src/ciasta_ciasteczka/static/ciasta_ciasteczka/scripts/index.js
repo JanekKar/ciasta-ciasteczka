@@ -55,4 +55,8 @@ function plusSlides(n) {
 }
 
 var slideIndex = 0;
-// carousel();
+
+
+function open_collapsible() {
+    document.querySelector("#how-to-order .collapsible").classList.toggle('active');
+}

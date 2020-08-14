@@ -1,8 +1,6 @@
 .sections-container {
     margin: auto;
     display: block;
-    max-width: 1024px;
-    box-shadow: 6px 0 15px lightgray, -6px 0 15px lightgray;
 }
 
 section {
@@ -12,10 +10,111 @@ section {
 
     z-index: 0;
     min-height: 100vh;
+    height: auto;
 
     margin: auto;
 
     scroll-behavior: smooth;
+
+    padding: 2%;
+}
+
+section p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 1%;
+}
+
+section h1 {
+    font-size: 2.2rem;
+    color: var(--main-bg-primary);
+    padding-bottom: 6vh;
+}
+
+.opaque-section h1 {
+    color: #7B3F00;
+}
+
+
+#home {
+    max-width: 100%;
+}
+
+
+
+#about p span {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: var(--main-bg-primary);
+    text-shadow: 2px 2px var(--main-bg-accent);
+}
+
+#about .logo-wrapper {
+    width: 25vw;
+    max-width: 400px;
+}
+
+
+#how-to-order ol li {
+    font-size: 1.5rem;
+    padding: 1%;
+}
+
+#how-to-order li * {
+    display: inline-block;
+}
+
+#how-to-order .collapsible-toggle {
+    cursor: pointer;
+    height: 1.7rem;
+    padding-left: 1rem;
+}
+
+#how-to-order .collapsible-toggle:hover img {
+    webkit-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+
+    transition: all .1s ease-in-out;
+}
+
+#how-to-order img {
+    display: block;
+    margin: auto;
+
+    height: 1.8rem;
+}
+
+#how-to-order .collapsible {
+    display: block;
+    max-height: 0;
+    height: 0;
+
+    overflow: hidden;
+
+    text-align: start;
+    font-size: 1rem;
+    transition: max-height .5s ease-in-out;
+
+}
+
+#how-to-order .collapsible.active {
+    max-height: 2000px;
+    height: auto;
+
+    transition: max-height .5s ease-in-out;
+}
+
+
+
+.section-content-wrapper {
+    max-width: 1024px;
+    width: 100%;
+    height: 100%;
+}
+
+.opaque-section {
 
     background-color: var(--section-background);
 }
@@ -30,6 +129,9 @@ section .centered-section {
     width: 100%;
 }
 
+
+
+
 section .column-container {
     display: flex;
     flex-direction: row;
@@ -42,29 +144,38 @@ section .column {
     flex-direction: column;
     justify-content: center;
 
-    width: 48%;
+    width: 45%;
     height: 100%;
 
-    padding: 1rem;
+    padding: 1.5rem;
 
-    background-color: var(--cookie);
-
+    /* background-color: var(--cookie); */
+    background-image: url("../assets/backgrounds/biscuit-background.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
     border-radius: 15px;
 }
 
+section .column .content-wrapper {
+    margin: auto;
+}
 
-section .address-wrapper,
-section .phone-wrapper {
+section .wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: auto;
     height: auto;
-    margin: auto;
-    height: 48%;
+    margin: 6% 0 6% 0
 }
 
+section .phone-wrapper:hover {
 
+    webkit-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+}
 
 section .phone-wrapper a {
     font-size: 2rem;
@@ -76,11 +187,41 @@ section .address-wrapper p {
     color: white;
     font-size: 1.5rem;
     font-family: var(--roboto-font);
+    text-align: left;
 }
 
 section .wrapper .icon-wrapper {
-    height: 3rem;
+    height: 3.5rem;
     margin-right: 1rem;
+}
+
+section .social-media-links {
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-top: 5%;
+}
+
+section .social-media-links .icon-wrapper {
+    margin: auto;
+}
+
+section .social-media-links a {
+    height: 5rem;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+section .social-media-links a:hover .icon-wrapper {
+    webkit-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+    transition: all .1s ease-in;
 }
 
 section .vertical-line {
@@ -94,6 +235,14 @@ section .horizontal-line {
     padding: 0;
 
 }
+
+
+@font-face {
+    font-family: Nickainley;
+    src: url(../fonts/Nickainley.otf);
+}
+
+
 
 .resp-iframe {
     position: absolute;
@@ -243,6 +392,12 @@ section .horizontal-line {
 
     section {
         width: 100%;
+        height: 100vh;
+    }
+
+    section p,
+    section ol {
+        font-size: 1rem;
     }
 
 
@@ -253,14 +408,16 @@ section .horizontal-line {
 
     section .column-container {
         width: 100%;
+        height: 100vh;
         flex-direction: column;
+        align-content: space-around;
+        align-items: center;
     }
 
     section .column {
         margin: auto;
-        width: 95%;
+        width: 90%;
         height: auto;
-
     }
 
     .resp-iframe-wrapper {
@@ -276,6 +433,10 @@ section .horizontal-line {
         width: 0;
         padding: 2vh;
         margin: 0;
+    }
+
+    section .address-wrapper p {
+        font-size: 1.2rem;
     }
 }
 
