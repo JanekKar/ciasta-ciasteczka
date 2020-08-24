@@ -4,12 +4,13 @@
     --main-bg-darker-primary: #17a7c0;
     --main-bg-accent: #ee9bc1;
     --cookie: #ca915b;
+    --chocolate: #7B3F00;
     --section-background: rgb(255, 220, 181);
 
     --main-bg-section: #d6cab9;
 
     /* Dimensions */
-    --nav-height: 8vh;
+    --nav-height: 7vh;
 
     /* Roboto font */
     --roboto-font: "Roboto Condensed", sans-serif;
@@ -26,7 +27,6 @@ html {
 
 body {
     display: block;
-    font-size: 15px;
 }
 
 * {
@@ -63,7 +63,7 @@ img {
     left: 5%;
     top: 0;
     z-index: 2;
-    width: 150px;
+    width: 125px;
 }
 
 .logo-container>.logo {
@@ -95,13 +95,17 @@ img {
     align-items: center;
 }
 
+.nav-links a {
+    height: 1.4rem;
+}
+
 .nav-links a,
 .nav-links span {
     display: block;
     text-decoration: none;
     letter-spacing: 2px;
     font-weight: 550;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: "Roboto Condensed", sans-serif;
     text-transform: capitalize;
     color: white;
@@ -184,13 +188,14 @@ img {
 }
 
 .category-container a {
+    min-height: 1.1rem;
     height: auto;
     padding: 0;
 }
 
 .category-container a span {
     font-family: sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding: 0.1rem;
 }
 
@@ -450,6 +455,7 @@ footer #contact {
     .nav-links li a {
         display: block;
         left: 0;
+        height: auto;
         margin: auto;
         padding: 1vh 2vw 1vh 2vw;
         width: 100vw;

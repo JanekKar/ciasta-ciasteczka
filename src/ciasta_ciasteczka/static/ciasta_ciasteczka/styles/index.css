@@ -32,7 +32,7 @@ section h1 {
 }
 
 .opaque-section h1 {
-    color: #7B3F00;
+    color: var(--chocolate)
 }
 
 
@@ -57,7 +57,7 @@ section h1 {
 
 #how-to-order ol li {
     font-size: 1.5rem;
-    padding: 1%;
+    padding: 1% 0 1% 0;
 }
 
 #how-to-order li * {
@@ -81,14 +81,13 @@ section h1 {
 #how-to-order img {
     display: block;
     margin: auto;
-
-    height: 1.8rem;
 }
 
 #how-to-order .collapsible {
     display: block;
     max-height: 0;
     height: 0;
+    padding: 0;
 
     overflow: hidden;
 
@@ -96,6 +95,7 @@ section h1 {
 
     text-align: start;
     font-size: 1rem;
+    color: var(--chocolate);
     transition: max-height .5s ease-in-out;
 
 }
@@ -103,6 +103,7 @@ section h1 {
 #how-to-order .collapsible.active {
     max-height: 2000px;
     height: auto;
+    padding-top: 1%;
 
     transition: max-height .5s ease-in-out;
 }
@@ -116,7 +117,6 @@ section h1 {
 }
 
 .opaque-section {
-
     background-color: var(--section-background);
 }
 
@@ -126,7 +126,8 @@ section .centered-section {
     justify-content: center;
     align-items: center;
     align-content: center;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     width: 100%;
 }
 
@@ -146,7 +147,6 @@ section .column {
     justify-content: center;
 
     width: 45%;
-    height: 100%;
 
     padding: 1.5rem;
 
@@ -171,11 +171,11 @@ section .wrapper {
 }
 
 section .phone-wrapper:hover {
-
-    webkit-transform: scale(1.2, 1.2);
-    -ms-transform: scale(1.2, 1.2);
-    -o-transform: scale(1.2, 1.2);
-    transform: scale(1.2, 1.2);
+    webkit-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+    transition: all .1s ease-in;
 }
 
 section .phone-wrapper a {
@@ -397,11 +397,10 @@ section .horizontal-line {
     }
 
     section h1 {
-        padding: 0;
+        padding: 5%;
     }
 
-    section p,
-    section ol {
+    section p {
         font-size: 1rem;
     }
 
@@ -411,18 +410,41 @@ section .horizontal-line {
         height: 10px;
     }
 
+    #how-to-order .centered-section {
+        padding-left: 10%
+    }
+
+    #how-to-order ol {
+        width: fit-content;
+    }
+
+    #how-to-order ol li {
+        font-size: 1rem;
+    }
+
+    #how-to-order .collapsible-toggle {
+        height: 1.2rem;
+    }
+
+    #how-to-order .collapsible.active {
+        font-size: 0.8rem;
+    }
+
     section .column-container {
         width: 100%;
         height: 100vh;
         flex-direction: column;
-        align-content: space-around;
         align-items: center;
     }
 
     section .column {
         margin: auto;
-        width: 90%;
-        height: auto;
+        width: 100%;
+        height: 100%;
+    }
+
+    #about .logo-wrapper {
+        width: 40vw;
     }
 
     .resp-iframe-wrapper {

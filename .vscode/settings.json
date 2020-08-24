@@ -5,6 +5,5 @@
         "--load-plugins=pylint_django",
     ],
     "python.formatting.provider": "autopep8",
-    "editor.formatOnSave": true,
-    "python.pythonPath": "django-mysql/bin/python"
+    "editor.formatOnSave": true
 }
