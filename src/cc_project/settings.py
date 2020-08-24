@@ -80,14 +80,12 @@ WSGI_APPLICATION = 'cc_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'ciasta-db',
-            'USER': 'admin',
-            'PASSWORD': 'admin',
-            'HOST': 'db',
-            'PORT': 3306,
-        }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ciasta-db',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
+        'HOST': 'db',
+        'PORT': 3306,
     }
 }
 
