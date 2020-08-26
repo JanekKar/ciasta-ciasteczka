@@ -217,7 +217,9 @@ img {
 }
 
 footer {
+    width: 100%;
     background-color: var(--main-bg-primary);
+    bottom: 0;
 }
 
 footer>.social-media-wrapper {

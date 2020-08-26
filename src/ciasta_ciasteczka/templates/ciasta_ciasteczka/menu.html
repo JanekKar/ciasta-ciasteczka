@@ -1,0 +1,26 @@
+{% extends 'ciasta_ciasteczka/base.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Menu - Ciasta, ciasteczka</title>
+{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/menu.css' %} ">
+{% endblock styles %}
+
+{% block scripts%}
+<script src="{% static 'ciasta_ciasteczka/scripts/menu.js' %}"></script>
+{% endblock scripts%}
+
+{% block main-content %}
+
+<div class="products-container">
+    <div class="product-wrapper">
+        <div class="product-photo-wrapper">
+            <img src="" alt="">
+        </div>
+    </div>
+</div>
+{% endblock main-content %}
