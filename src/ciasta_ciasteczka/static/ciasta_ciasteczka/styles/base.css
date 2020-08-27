@@ -6,6 +6,7 @@
     --cookie: #ca915b;
     --chocolate: #7B3F00;
     --section-background: rgb(255, 220, 181);
+    --section-darker-background: rgb(248, 197, 138);
 
     --main-bg-section: #d6cab9;
 
@@ -50,6 +51,7 @@ main {
     width: 100%;
     margin: auto;
     background-color: whitesmoke;
+    min-height: 90vh;
 }
 
 img {

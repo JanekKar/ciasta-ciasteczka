@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from unidecode import unidecode
 
 
 class Tray(models.Model):
@@ -35,7 +36,7 @@ class Category(models.Model):
     slug = models.SlugField(unique=True)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        self.slug = slugify(unidecode(self.name))
         super(Category, self).save(*args, **kwargs)
 
     def __str__(self):
@@ -60,6 +61,11 @@ class Product(models.Model):
         return len(ProductPhoto.objects.filter(product=self,))
     number_of_photos.short_description = "Number of Photos"
 
+    def get_main_pic_url(self):
+        pictures = ProductPhoto.objects.get(product=self, main=True)
+        if pictures:
+            return pictures.photo.url
+
 
 class ProductPhoto(models.Model):
     name = models.CharField(max_length=50)
@@ -67,7 +73,17 @@ class ProductPhoto(models.Model):
         Product, verbose_name="Product", on_delete=models.CASCADE)
     altr_text = models.CharField(max_length=100)
     photo = models.ImageField(
-        height_field=None, width_field=None, max_length=None)
+        height_field=None, width_field=None, max_length=None, upload_to='products/')
+    main = models.BooleanField("Main photo", default=False)
+
+    # TODO Validate only one image as main per product
 
     def __str__(self):
         return self.name
+
+
+class SlideshowPhoto(models.Model):
+    text = models.CharField(max_length=100, blank=True, null=True)
+    image = models.ImageField(
+        upload_to='slideshow/', height_field=None, width_field=1024, max_length=None)
+    altr_text = models.CharField(max_length=100, blank=True, null=True)

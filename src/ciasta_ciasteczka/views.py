@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.template import loader
 from django.http import HttpResponse
 from django.utils import timezone
@@ -30,14 +30,18 @@ def index(request):
 
 
 def category(request, category_slug):
-    def get_products():
-        cat = Category.objects.filter(slug=category_slug)
-        return Product.objects.filter(category=cat)
+    def get_products(category):
+        return Product.objects.filter(category=category, hidden=False)
+
+    def get_category():
+        return get_object_or_404(Category, slug=category_slug)
 
     template_name = 'ciasta_ciasteczka/menu.html'
     template = loader.get_template(template_name)
+    category = get_category()
     context = {
-        'products': get_products(),
+        'category': category,
+        'products': get_products(category),
         "": "",
     }
     context.update(get_default_context())
