@@ -1,0 +1,77 @@
+.main-content-wrapper {
+    max-width: 1024px;
+    margin: auto;
+    background-color: var(--section-background);
+    height: 100%;
+}
+
+.grid {
+    padding-top: 5vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 1vw;
+}
+
+.size-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.size {
+    border: 1px solid black;
+    padding: 3px;
+    margin: 4px;
+}
+
+.grid-cell {
+    padding: 3%;
+}
+
+
+.all-images .image-wrapper {
+    position: relative;
+    display: block;
+    height: 150px;
+    width: 150px;
+}
+
+.all-images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+
+.collapsible-toggle {
+    cursor: pointer;
+    height: 1.7rem;
+}
+
+.collapsible {
+    display: block;
+    max-height: 0;
+    height: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    margin: 0;
+
+    text-align: start;
+    font-size: 1rem;
+    color: var(--chocolate);
+    transition: max-height .5s ease-in-out;
+
+}
+
+.collapsible.active {
+    max-height: 2000px;
+    height: auto;
+    padding-top: 1%;
+
+    transition: max-height .5s ease-in-out;
+}

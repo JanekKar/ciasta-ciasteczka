@@ -1,0 +1,14 @@
+ALTER TABLE ciasta_ciasteczka_sizeproductprice CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE ciasta_ciasteczka_category CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE ciasta_ciasteczka_product CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE ciasta_ciasteczka_productphoto CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE ciasta_ciasteczka_producttype CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE ciasta_ciasteczka_product_category CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE ciasta_ciasteczka_size CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE ciasta_ciasteczka_sizeproductprice CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE ciasta_ciasteczka_slideshowphoto CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE ciasta_ciasteczka_tray CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER TABLE django_admin_log CONVERT TO CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+
+

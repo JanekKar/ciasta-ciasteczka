@@ -7,9 +7,14 @@ class ProductPhotoInline(admin.TabularInline):
     extra = 3
 
 
+class SizeProductPriceInline(admin.TabularInline):
+    model = SizeProductPrice
+    extra = 3
+
+
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'hidden', 'number_of_photos')
-    inlines = [ProductPhotoInline]
+    list_display = ('name', 'hidden', 'number_of_photos')
+    inlines = [ProductPhotoInline, SizeProductPriceInline]
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -20,6 +25,7 @@ admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Size)
 admin.site.register(Tray)
+admin.site.register(ProductType)
 
 
 # Register your models here.

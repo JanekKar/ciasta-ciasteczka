@@ -1,0 +1,82 @@
+{% extends 'ciasta_ciasteczka/base.html' %}
+{% load static %}
+
+
+{% block title %}
+<title>Menu - Ciasta, ciasteczka</title>
+{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/product.css' %} ">
+{% endblock styles %}
+
+{% block scripts%}
+<script src="{% static 'ciasta_ciasteczka/scripts/slideshow.js' %}"></script>
+<script src="{% static 'ciasta_ciasteczka/scripts/product.js' %}"></script>
+{% endblock scripts%}
+
+{% block main-content %}
+<div class="main-content-wrapper">
+    <div class="grid">
+        <div class="gallery grid-cell">
+            <div class="product-image image-wrapper">
+                <img src="{{product.get_main_pic_url}}" alt="">
+            </div>
+
+            <div class="all-images">
+                {% for image in product_images %}
+                <div class="product-image image-wrapper">
+                    <img src="{{image.photo.url}}" alt="{{ image.alt_text}}">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="product-info grid-cell">
+            <h1>{{product.name}}</h1>
+            <p>{{ product.description }}</p>
+            <div class="size-container">
+                {% for size in sizes %}
+                <div class="size">
+                    <h4>{{size.price}} {{product.product_type.price_unit}}</h4>
+                    <h5>{{size.size.name}}</h5>
+                    <h6>Ilość osób: {{size.size.min_amount_of_people}} - {{size.size.max_amount_of_people}}</h6>
+                    {% if size.size.tray is not None%}
+                    <div class="tray-info">
+                        <span>
+                            {% if size.size.tray.diameter %}
+                            Średnica: {{size.size.tray.diameter}} cm
+                            {% elif size.size.tray.width and size.tray.length %}
+                            Wymiary: {{size.size.tray.width}} X {{size.size.tray.length}} cm
+                            {% endif %}
+                        </span>
+                    </div>
+                    {% else %}
+                    <p>
+                        no info
+                    </p>
+                    {%endif%}
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="information">
+        {% if product.ingredients %}
+        <span class="collapsible-toggle" onClick="open_collapsible_1()">Składaniki</span>
+        <p class="collapsible col_1">
+            {{ product.ingredients }}
+        </p>
+        {% endif %}
+        {% if product.allergens %}
+        <span class="collapsible-toggle" onClick="open_collapsible_2()">Alergeny</span>
+        <p class="collapsible col_2">
+            {{ product.allergens }}
+        </p>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock main-content %}

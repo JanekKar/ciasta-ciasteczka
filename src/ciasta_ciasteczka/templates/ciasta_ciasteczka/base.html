@@ -46,9 +46,11 @@
                         <li class="category-container">
                             <h2>{{category}}</h2> <ul>
                             {% for sub_category in sub_categories%}
+                                {% if sub_category.has_active_products %}
                                 <li class="link-btn">
                                     <a href="{% url 'ciasta_ciasteczka:category' sub_category.slug %}"><span>{{sub_category.name}}</span></a>
                                 </li>
+                                {% endif %}
                             {% endfor %}
                             </ul>
                         </li>

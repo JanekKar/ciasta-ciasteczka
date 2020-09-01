@@ -25,17 +25,19 @@
             <p>{{category.description}}</p>
         </div>
     </div>
-    <div class="products-container flex-grid">
+    <div class="products-container grid">
         {% for product in products %}
+        <a href=" {% url 'ciasta_ciasteczka:product_details' product.id%} ">
         <div class="product-card">
             <div class="product-image image-wrapper">
                 <img src="{{product.get_main_pic_url}}" alt="">
             </div>
             <div class="product-info">
                 <h4>{{product.name}}</h4>
-                <h5>{{product.price}}</h5>
+                <h5>{{product.get_smallest_price}}</h5>
             </div>
         </div>
+        </a>
         {% endfor %}
     </div>
 </div>

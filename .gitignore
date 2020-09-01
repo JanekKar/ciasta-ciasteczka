@@ -132,3 +132,6 @@ dmypy.json
 # DB data
 db
 db/*
+
+media
+media/*

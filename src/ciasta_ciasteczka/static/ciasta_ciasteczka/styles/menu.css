@@ -2,6 +2,11 @@
     --product-card-width: 270px;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .main-content-wrapper {
     display: block;
     max-width: 1024px;
@@ -9,7 +14,6 @@
     margin: auto;
 
     background-color: var(--section-background);
-    min-height: 90vh;
     box-shadow: 5px 0px 10px gray, -5px 0px 10px gray;
 }
 
@@ -19,7 +23,7 @@
     background-color: var(--section-darker-background);
 }
 
-.flex-grid {
+.grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
@@ -61,7 +65,6 @@
 }
 
 .product-image img {
-
     border-radius: 5px 5px 0px 0px;
 }
 

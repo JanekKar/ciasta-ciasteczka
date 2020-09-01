@@ -51,7 +51,11 @@ main {
     width: 100%;
     margin: auto;
     background-color: whitesmoke;
-    min-height: 90vh;
+    min-height: 94vh;
+}
+
+.main-content-wrapper {
+    min-height: 94vh;
 }
 
 img {
