@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-09 18:10+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n"
+"%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n"
+"%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+#: ciasta_ciasteczka/actions.py:9
+msgid "hide selected products"
+msgstr "ukryj zaznaczone produkty"
+
+#: ciasta_ciasteczka/actions.py:16
+msgid "show selected products"
+msgstr "pokarz zaznaczone produkty"
+
+#: ciasta_ciasteczka/actions.py:26
+msgid "hide all products in selected categories"
+msgstr "ukryj wszystkie produkty w zaznaczoneych kategoriach"
+
+#: ciasta_ciasteczka/actions.py:36
+msgid "show all products in selected categories"
+msgstr "pokarz wszystkie produkty w zaznaczoneych kategoriach"
+
+#: ciasta_ciasteczka/models.py:15 ciasta_ciasteczka/models.py:44
+msgid "tray"
+msgstr "blacha"
+
+#: ciasta_ciasteczka/models.py:16
+#, fuzzy
+#| msgid "tray"
+msgid "trays"
+msgstr "blachy"
+
+#: ciasta_ciasteczka/models.py:18 ciasta_ciasteczka/models.py:41
+#: ciasta_ciasteczka/models.py:56 ciasta_ciasteczka/models.py:69
+#: ciasta_ciasteczka/models.py:103
+msgid "name"
+msgstr "nazwa"
+
+#: ciasta_ciasteczka/models.py:20
+msgid "diameter"
+msgstr "średnica"
+
+#: ciasta_ciasteczka/models.py:21
+msgid "width"
+msgstr "szerokość"
+
+#: ciasta_ciasteczka/models.py:23
+msgid "length"
+msgstr "długość"
+
+#: ciasta_ciasteczka/models.py:25
+msgid "minimum amount of people"
+msgstr "minimalna ilość osób"
+
+#: ciasta_ciasteczka/models.py:27
+msgid "maximum amount of people"
+msgstr "maxymalna ilość osób"
+
+#: ciasta_ciasteczka/models.py:38 ciasta_ciasteczka/models.py:147
+msgid "size"
+msgstr "rozamiar"
+
+#: ciasta_ciasteczka/models.py:39
+#, fuzzy
+#| msgid "size"
+msgid "sizes"
+msgstr "rozamiary"
+
+#: ciasta_ciasteczka/models.py:42
+msgid "weight"
+msgstr "waga"
+
+#: ciasta_ciasteczka/models.py:53
+msgid "product type"
+msgstr "typ produktu"
+
+#: ciasta_ciasteczka/models.py:54
+#, fuzzy
+#| msgid "product type"
+msgid "product types"
+msgstr "typy produktów"
+
+#: ciasta_ciasteczka/models.py:57
+msgid "price unit"
+msgstr "jednostka ceny"
+
+#: ciasta_ciasteczka/models.py:66 ciasta_ciasteczka/models.py:73
+#: ciasta_ciasteczka/models.py:114
+msgid "category"
+msgstr "kategoria"
+
+#: ciasta_ciasteczka/models.py:67
+#, fuzzy
+#| msgid "category"
+msgid "categories"
+msgstr "kategorie"
+
+#: ciasta_ciasteczka/models.py:71 ciasta_ciasteczka/models.py:104
+msgid "description"
+msgstr "opis"
+
+#: ciasta_ciasteczka/models.py:74
+msgid "slug"
+msgstr "slug"
+
+#: ciasta_ciasteczka/models.py:100 ciasta_ciasteczka/models.py:149
+#: ciasta_ciasteczka/models.py:164
+msgid "product"
+msgstr "produkt"
+
+#: ciasta_ciasteczka/models.py:101
+#, fuzzy
+#| msgid "product"
+msgid "products"
+msgstr "produkty"
+
+#: ciasta_ciasteczka/models.py:106
+msgid "ingredients"
+msgstr "składniki"
+
+#: ciasta_ciasteczka/models.py:108
+msgid "allergens"
+msgstr "alergeny"
+
+#: ciasta_ciasteczka/models.py:109 ciasta_ciasteczka/models.py:225
+msgid "hidden"
+msgstr "ukryty"
+
+#: ciasta_ciasteczka/models.py:111
+msgid "creation date"
+msgstr "data utworzenia"
+
+#: ciasta_ciasteczka/models.py:113
+msgid "type"
+msgstr "typ"
+
+#: ciasta_ciasteczka/models.py:121
+#, fuzzy
+#| msgid "product photo"
+msgid "number of photos"
+msgstr "ilość zdjęć"
+
+#: ciasta_ciasteczka/models.py:126
+#, fuzzy
+#| msgid "category"
+msgid "number of categories"
+msgstr "ilość produktów"
+
+#: ciasta_ciasteczka/models.py:143
+msgid "size and price of product"
+msgstr "rozmiar i cena produkty"
+
+#: ciasta_ciasteczka/models.py:144
+#, fuzzy
+#| msgid "size and price of product"
+msgid "sizes and prices of products"
+msgstr "rozmiary i ceny produktów"
+
+#: ciasta_ciasteczka/models.py:151
+msgid "price"
+msgstr "cena"
+
+#: ciasta_ciasteczka/models.py:160
+msgid "product photo"
+msgstr "zdjęcie produktu"
+
+#: ciasta_ciasteczka/models.py:161
+#, fuzzy
+#| msgid "product photo"
+msgid "product photos"
+msgstr "zdjęcia produktów"
+
+#: ciasta_ciasteczka/models.py:166 ciasta_ciasteczka/models.py:224
+msgid "alternative text"
+msgstr "text alternatywny"
+
+#: ciasta_ciasteczka/models.py:167
+msgid "image"
+msgstr "zdjęcie"
+
+#: ciasta_ciasteczka/models.py:169
+msgid "main photo"
+msgstr "zdjęcie główne"
+
+#: ciasta_ciasteczka/models.py:217
+msgid "slideshow photot"
+msgstr "zdjęcie do pokazu slajdów"
+
+#: ciasta_ciasteczka/models.py:218
+#, fuzzy
+#| msgid "slideshow photot"
+msgid "slideshow photos"
+msgstr "zdjęcia do pokazu slajdów"
+
+#: ciasta_ciasteczka/models.py:221
+msgid "text"
+msgstr "tekst"

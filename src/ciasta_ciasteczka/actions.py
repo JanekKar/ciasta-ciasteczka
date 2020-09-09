@@ -1,18 +1,19 @@
 from .models import Product
+from django.utils.translation import gettext_lazy as _
 
 
 def hide_products(modeladmin, request, queryset):
     queryset.update(hidden=True)
 
 
-hide_products.short_description = "Hide selected products"
+hide_products.short_description = _("hide selected products").capitalize()
 
 
 def show_products(modeladmin, request, queryset):
     queryset.update(hidden=False)
 
 
-show_products.short_description = "Show selected products"
+show_products.short_description = _("show selected products").capitalize()
 
 
 def hide_all_products(modeladmin, request, queryset):
@@ -21,7 +22,8 @@ def hide_all_products(modeladmin, request, queryset):
         products.update(hidden=True)
 
 
-hide_all_products.short_description = "Hide all products in selected categories"
+hide_all_products.short_description = _(
+    "hide all products in selected categories").capitalize()
 
 
 def show_all_products(modeladmin, request, queryset):
@@ -30,4 +32,5 @@ def show_all_products(modeladmin, request, queryset):
         products.update(hidden=False)
 
 
-show_all_products.short_description = "Show all products in selected categories"
+show_all_products.short_description = _(
+    "show all products in selected categories").capitalize()

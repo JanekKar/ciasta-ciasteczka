@@ -1,27 +1,30 @@
 from django.dispatch import receiver
 from django.db import models
 from django.utils.text import slugify
-from . import utils
-from .validators import *
-import os
-
-from PIL import Image
-
 from django.utils.translation import gettext_lazy as _
+
+from . import utils
+
+import os
+from PIL import Image
 
 
 class Tray(models.Model):
 
     class Meta:
-        verbose_name_plural = "Blachy"
-        verbose_name = "Blacha"
+        verbose_name = _("tray")
+        verbose_name_plural = _("trays")
 
-    name = models.CharField(verbose_name=_("Name"), max_length=50)
-    diameter = models.IntegerField(blank=True, null=True)
-    width = models.IntegerField(blank=True, null=True)
-    length = models.IntegerField(blank=True, null=True)
-    min_amount_of_people = models.IntegerField(default=0)
-    max_amount_of_people = models.IntegerField(default=0)
+    name = models.CharField(verbose_name=_("name"), max_length=50)
+    diameter = models.IntegerField(
+        verbose_name=_("diameter"), blank=True, null=True)
+    width = models.IntegerField(verbose_name=_("width"), blank=True, null=True)
+    length = models.IntegerField(
+        verbose_name=_("length"), blank=True, null=True)
+    min_amount_of_people = models.IntegerField(
+        verbose_name=_("minimum amount of people"), default=0)
+    max_amount_of_people = models.IntegerField(
+        verbose_name=_("maximum amount of people"), default=0)
 
     # TODO validate if diameter or width/length are set (one or other)
 
@@ -32,13 +35,13 @@ class Tray(models.Model):
 class Size(models.Model):
 
     class Meta:
-        verbose_name_plural = "Rozmiary"
-        verbose_name = "Rozmiar"
+        verbose_name = _("size")
+        verbose_name_plural = _("sizes")
 
-    name = models.CharField(max_length=50)
-    weight = models.FloatField(blank=True, null=True)
-    tray = models.ForeignKey(
-        Tray, blank=False, null=True, on_delete=models.CASCADE, default=None)
+    name = models.CharField(verbose_name=_("name"), max_length=50)
+    weight = models.FloatField(verbose_name=_("weight"), blank=True, null=True)
+    tray = models.ForeignKey(Tray, verbose_name=_(
+        "tray"), blank=False, null=True, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         return self.name
@@ -47,11 +50,11 @@ class Size(models.Model):
 class ProductType(models.Model):
 
     class Meta:
-        verbose_name_plural = "Typy Produktów"
-        verbose_name = "Typ Produktu"
+        verbose_name = _("product type")
+        verbose_name_plural = _("product types")
 
-    name = models.CharField(max_length=50)
-    price_unit = models.CharField(max_length=10)
+    name = models.CharField(verbose_name=_("name"), max_length=50)
+    price_unit = models.CharField(verbose_name=_("price unit"), max_length=10)
 
     def __str__(self):
         return self.name
@@ -60,14 +63,15 @@ class ProductType(models.Model):
 class Category(models.Model):
 
     class Meta:
-        verbose_name_plural = "Kategorie"
-        verbose_name = "Kategoria"
+        verbose_name = _("category")
+        verbose_name_plural = _("categories")
 
-    name = models.CharField(unique=True, max_length=50)
-    description = models.TextField(blank=True, null=True)
-    parent = models.ForeignKey(
-        "Category", on_delete=models.CASCADE, blank=True, null=True)
-    slug = models.SlugField(unique=True)
+    name = models.CharField(verbose_name=_("name"), unique=True, max_length=50)
+    description = models.TextField(verbose_name=_(
+        "description"), blank=True, null=True)
+    parent = models.ForeignKey("Category", verbose_name=_(
+        "category"), on_delete=models.CASCADE, blank=True, null=True)
+    slug = models.SlugField(verbose_name=_("slug"), unique=True)
 
     def __str__(self):
         return self.name
@@ -93,31 +97,33 @@ class Category(models.Model):
 class Product(models.Model):
 
     class Meta:
-        verbose_name_plural = "Produkty"
-        verbose_name = "Produkt"
+        verbose_name = _("product")
+        verbose_name_plural = _("products")
 
-    name = models.CharField(max_length=60)
-    description = models.TextField()
-    ingredients = models.TextField(blank=True, null=True)
-    allergens = models.TextField(blank=True, null=True)
-    hidden = models.BooleanField(default=False)
-    creation_date = models.DateTimeField(auto_now_add=True)
-
-    product_type = models.ForeignKey(
-        ProductType, verbose_name="Type", on_delete=models.CASCADE, default=None, blank=False)
-
-    category = models.ManyToManyField(Category)
+    name = models.CharField(verbose_name=_("name"), max_length=60)
+    description = models.TextField(verbose_name=_("description"),)
+    ingredients = models.TextField(verbose_name=_(
+        "ingredients"), blank=True, null=True)
+    allergens = models.TextField(verbose_name=_(
+        "allergens"), blank=True, null=True)
+    hidden = models.BooleanField(verbose_name=_("hidden"), default=False)
+    creation_date = models.DateTimeField(
+        verbose_name=_("creation date"), auto_now_add=True)
+    product_type = models.ForeignKey(ProductType, verbose_name=_(
+        "type"), on_delete=models.CASCADE, default=None, blank=False)
+    category = models.ManyToManyField(Category, verbose_name=_("category"),)
 
     def __str__(self):
         return self.name
 
     def number_of_photos(self):
         return len(ProductPhoto.objects.filter(product=self,))
-    number_of_photos.short_description = "Number of Photos"
+    number_of_photos.short_description = _("number of photos").capitalize()
 
     def number_of_categories(self):
         return len(Category.objects.filter(product=self,))
-    number_of_categories.short_description = "Number of Categories"
+    number_of_categories.short_description = _(
+        "number of categories").capitalize()
 
     def get_main_pic(self):
         picture = ProductPhoto.objects.get(product=self, main=True)
@@ -134,11 +140,15 @@ class Product(models.Model):
 class SizeProductPrice(models.Model):
 
     class Meta:
-        verbose_name = "Rozmiar i Cena Produktu"
+        verbose_name = _("size and price of product")
+        verbose_name_plural = _("sizes and prices of products")
 
-    size = models.ForeignKey(Size, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=5, decimal_places=2)
+    size = models.ForeignKey(Size, verbose_name=_(
+        "size"), on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, verbose_name=_(
+        "product"), on_delete=models.CASCADE)
+    price = models.DecimalField(verbose_name=_(
+        "price"), max_digits=5, decimal_places=2)
 
     def __str__(self):
         return self.size.name + "-" + self.product.name
@@ -147,15 +157,16 @@ class SizeProductPrice(models.Model):
 class ProductPhoto(models.Model):
 
     class Meta:
-        verbose_name_plural = "Zbjęcia produktów"
-        verbose_name = "Zdjęcie produktu"
+        verbose_name = _("product photo")
+        verbose_name_plural = _("product photos")
 
-    product = models.ForeignKey(
-        Product, verbose_name="Product", on_delete=models.CASCADE)
-    alt_text = models.CharField("Alternative text", max_length=100)
-    photo = models.ImageField(upload_to=utils.RandomFileName('products/'),
-                              height_field=None, width_field=None, max_length=None)
-    main = models.BooleanField("Main photo", default=False)
+    product = models.ForeignKey(Product, verbose_name=_(
+        "product"), on_delete=models.CASCADE)
+    alt_text = models.CharField(verbose_name=_(
+        "alternative text"), max_length=100)
+    photo = models.ImageField(verbose_name=_("image"), upload_to=utils.RandomFileName(
+        'products/'), height_field=None, width_field=None, max_length=None)
+    main = models.BooleanField(verbose_name=_("main photo"), default=False)
 
     def save(self, *args, **kwargs):
         if self.main:
@@ -203,14 +214,15 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
 class SlideshowPhoto(models.Model):
 
     class Meta:
-        verbose_name_plural = "Obrazy Do Pokazu"
-        verbose_name = "Obraz Do Pokazu"
+        verbose_name = _("slideshow photot")
+        verbose_name_plural = _("slideshow photos")
 
-    text = models.CharField(max_length=100, blank=True, null=True)
-    image = models.ImageField(
-        upload_to=utils.RandomFileName('slideshow/'))
-    alt_text = models.CharField(max_length=100, blank=True, null=True)
-    hidden = models.BooleanField(default=False)
+    text = models.CharField(verbose_name=_(
+        "text"), max_length=100, blank=True, null=True)
+    image = models.ImageField(upload_to=utils.RandomFileName('slideshow/'))
+    alt_text = models.CharField(verbose_name=_(
+        "alternative text"), max_length=100, blank=True, null=True)
+    hidden = models.BooleanField(verbose_name=_("hidden"), default=False)
 
     def save(self, *args, **kwargs):
         super(SlideshowPhoto, self).save(*args, **kwargs)
