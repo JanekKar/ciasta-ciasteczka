@@ -2,12 +2,14 @@
 {% load static %}
 
 {% block title %}
-    <title>Ciasta, ciasteczka</title>
+<title>Ciasta, ciasteczka</title>
 {% endblock title %}
 
 
 {% block styles %}
 <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/index.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/new_products.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/product_card.css' %} ">
 {% endblock styles %}
 
 {% block scripts%}
@@ -17,39 +19,28 @@
 
 {% block main-content %}
 <div class="sections-container">
-    <section id="home">
+    <section id="home" style="padding: 0;">
         <div class="section-content-wrapper">
             <div class="carousel-container">
                 <div class="slideshow-container">
+                    {% for image in slideshow_images %}
                     <div class="slide fade">
-                        <img src=" {% static 'ciasta_ciasteczka/assets/banner/temp-banner.webp' %}" alt="" />
-                        <div class="caption-text">Text1</div>
+                        <img src=" {{image.image.url}}" alt="{{image.alt_text}}" />
+                        <div class="caption-text">{{image.text}}</div>
                     </div>
-                    <div class="slide fade">
-                        <img src=" {% static 'ciasta_ciasteczka/assets/banner/temp-banner.webp' %}" alt="" />
-                        <div class="caption-text">Text2</div>
-                    </div>
-                    <div class="slide fade">
-                        <img src=" {% static 'ciasta_ciasteczka/assets/banner/temp-banner.webp' %}" alt="" />
-                        <div class="caption-text">Text3</div>
-                    </div>
-                    <div class="slide fade">
-                        <img src=" {% static 'ciasta_ciasteczka/assets/banner/temp-banner.webp' %}" alt="" />
-                        <div class="caption-text">Text4</div>
-                    </div>
+                    {% endfor %}
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     <div class="dots-container">
-                        <span onclick="currentSlide(1)" class="dot"></span>
-                        <span onclick="currentSlide(2)" class="dot"></span>
-                        <span onclick="currentSlide(3)" class="dot"></span>
-                        <span onclick="currentSlide(4)" class="dot"></span>
+                        {% for image in slideshow_images %}
+                        <span onclick="currentSlide({{forloop.counter}})" class="dot"></span>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-            <p>
-                Ciasta to moja pasja!
-            </p>
+            <div class="new-products-wrapper">
+                {% include "ciasta_ciasteczka/new_products.html"%}
+            </div>
         </div>
 
     </section>
@@ -73,7 +64,7 @@
                         </p>
                     </li>
                     <li>Skontaktuj się ze mną telefonicznie, przez facebooka lub instagrama</li>
-                    <li>Złuż zamówienie i ustal dogodny termin odbioru <small>(chwilowo dostępny jest tylko odbiór
+                    <li>Złóż zamówienie i ustal dogodny termin odbioru <small>(chwilowo dostępny jest tylko odbiór
                             osobisty)</small>
                     </li>
                     <li><b>Gotowe</b>, teraz już tylko musisz odebrać zamówienie w wyznaczonym terminie</li>

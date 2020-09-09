@@ -1,9 +1,11 @@
 from django.shortcuts import get_object_or_404, render
 from django.template import loader
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.utils import timezone
 
 from .models import *
+
+import random
 
 
 def get_default_context():
@@ -22,6 +24,7 @@ def get_default_context():
     return {
         "year": timezone.now().year,
         'categories': categories,
+        'new_products': Product.objects.all().order_by('-creation_date')[:4],
     }
 
 
@@ -29,6 +32,7 @@ def index(request):
     template_name = 'ciasta_ciasteczka/index.html'
     template = loader.get_template(template_name)
     context = {
+        "slideshow_images": SlideshowPhoto.objects.filter(hidden=False),
         "": "",
     }
     context.update(get_default_context())
@@ -37,25 +41,34 @@ def index(request):
 
 def category(request, category_slug):
     def get_products(category):
+        all_products = []
         if category.is_parent():
             sub_categories = Category.objects.filter(parent=category)
-            all_products = []
             for sub_category in sub_categories:
                 products = Product.objects.filter(category=sub_category)
                 all_products += products
-            return set(all_products)
+            all_products = set(all_products)
         else:
-            return Product.objects.filter(category=category, hidden=False)
+            all_products = Product.objects.filter(
+                category=category, hidden=False)
+        if len(all_products) == 0:
+            raise Http404
+        else:
+            return all_products
 
     def get_category():
         return get_object_or_404(Category, slug=category_slug)
 
+    def get_random_background_image():
+        images = SlideshowPhoto.objects.filter(hidden=False)
+        return random.choice(images)
     template_name = 'ciasta_ciasteczka/menu.html'
     template = loader.get_template(template_name)
     category = get_category()
     context = {
         'category': category,
         'products': get_products(category),
+        'background_image': get_random_background_image(),
         "": "",
     }
     context.update(get_default_context())
@@ -67,8 +80,8 @@ def product_details(request, product_id):
     template = loader.get_template(template_name)
     context = {
         'product': get_object_or_404(Product, id=product_id, hidden=False),
-        'product_images': ProductPhoto.objects.filter(product_id=product_id),
-        'sizes': SizeProductPrice.objects.filter(product_id=product_id),
+        'product_images': ProductPhoto.objects.filter(product_id=product_id).order_by('-main'),
+        'sizes': SizeProductPrice.objects.filter(product_id=product_id).order_by('price'),
         "": "",
     }
     context.update(get_default_context())

@@ -3,79 +3,102 @@
 
 
 {% block title %}
-<title>Menu - Ciasta, ciasteczka</title>
+<title>{{product.name}} - Ciasta, ciasteczka</title>
 {% endblock title %}
 
 {% block styles %}
 <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/product.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/new_products.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/product_card.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/product_gallery.css' %} ">
 {% endblock styles %}
 
 {% block scripts%}
-<script src="{% static 'ciasta_ciasteczka/scripts/slideshow.js' %}"></script>
+<script src="{% static 'ciasta_ciasteczka/scripts/product_gallery.js' %}"></script>
 <script src="{% static 'ciasta_ciasteczka/scripts/product.js' %}"></script>
 {% endblock scripts%}
 
 {% block main-content %}
 <div class="main-content-wrapper">
     <div class="grid">
-        <div class="gallery grid-cell">
-            <div class="product-image image-wrapper">
-                <img src="{{product.get_main_pic_url}}" alt="">
+        <div class="gallery">
+            {% for image in product_images  %}
+            <div class="mySlides">
+                <img src="{{image.photo.url}}" alt={{ image.alt_text}}>
             </div>
+            {% empty %}
+            <img src=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %}"
+                alt="Default logo (no product image)">
+            {% endfor %}
 
-            <div class="all-images">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="row">
                 {% for image in product_images %}
-                <div class="product-image image-wrapper">
-                    <img src="{{image.photo.url}}" alt="{{ image.alt_text}}">
+                <div class="column">
+                    <img class="thumbnail cursor" src="{{ image.photo.url }}" style="width:100%"
+                        onclick="currentSlide({{ forloop.counter }})" alt="{{ image.alt_text }}">
                 </div>
                 {% endfor %}
             </div>
         </div>
-        <div class="product-info grid-cell">
-            <h1>{{product.name}}</h1>
-            <p>{{ product.description }}</p>
+        <div class="product-info">
+            <h1 class="name">{{product.name}}</h1>
+            <p class="description">{{ product.description }}</p>
+            {% if sizes %}
             <div class="size-container">
-                {% for size in sizes %}
+                {% for size_information in sizes %}
                 <div class="size">
-                    <h4>{{size.price}} {{product.product_type.price_unit}}</h4>
-                    <h5>{{size.size.name}}</h5>
-                    <h6>Ilość osób: {{size.size.min_amount_of_people}} - {{size.size.max_amount_of_people}}</h6>
-                    {% if size.size.tray is not None%}
+                    <h3>{{size_information.price}} {{product.product_type.price_unit}}</h3>
+                    <h4>{{size_information.size.name}}</h4>
+                    <h5>Ilość osób: {{size_information.size.tray.min_amount_of_people}} -
+                        {{size_information.size.tray.max_amount_of_people}}
+                    </h5>
+                    {% if size_information.size.tray is not None%}
                     <div class="tray-info">
-                        <span>
-                            {% if size.size.tray.diameter %}
-                            Średnica: {{size.size.tray.diameter}} cm
-                            {% elif size.size.tray.width and size.tray.length %}
-                            Wymiary: {{size.size.tray.width}} X {{size.size.tray.length}} cm
+                        <h6>
+                            {% if size_information.size.tray.diameter %}
+                            Średnica: {{size_information.size.tray.diameter}} cm
+                            {% elif size_information.size.tray.width and size_information.size.tray.length %}
+                            Wymiary: {{size_information.size.tray.width}} X {{size_information.size.tray.length}} cm
                             {% endif %}
-                        </span>
+                        </h6>
                     </div>
                     {% else %}
-                    <p>
-                        no info
-                    </p>
+                    <h6>no info</h6>
                     {%endif%}
-
                 </div>
                 {% endfor %}
             </div>
+            {% endif%}
         </div>
     </div>
 
     <div class="information">
         {% if product.ingredients %}
-        <span class="collapsible-toggle" onClick="open_collapsible_1()">Składaniki</span>
-        <p class="collapsible col_1">
-            {{ product.ingredients }}
-        </p>
+        <div class="ingredients">
+            <span class="collapsible-toggle" onClick="open_collapsible_1()">
+                <h3>Składniki<img class="arrow" src="{% static 'ciasta_ciasteczka/icons/chevron-down.svg' %}" alt="">
+                </h3>
+            </span>
+            <p class=" collapsible col_1">
+                {{ product.ingredients }}
+            </p>
+        </div>
         {% endif %}
         {% if product.allergens %}
-        <span class="collapsible-toggle" onClick="open_collapsible_2()">Alergeny</span>
-        <p class="collapsible col_2">
-            {{ product.allergens }}
-        </p>
+        <div class="allergens">
+            <span class="collapsible-toggle" onClick="open_collapsible_2()">
+                <h3>Alergeny<img class="arrow" src="{% static 'ciasta_ciasteczka/icons/chevron-down.svg' %}" alt="">
+                </h3>
+            </span>
+            <p class="collapsible col_2">
+                {{ product.allergens }}
+            </p>
+        </div>
         {% endif %}
     </div>
+    {% include "ciasta_ciasteczka/new_products.html" %}
 
 </div>
 

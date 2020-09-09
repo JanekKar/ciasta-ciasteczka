@@ -8,6 +8,7 @@
 
 {% block styles %}
 <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/menu.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/product_card.css' %} ">
 {% endblock styles %}
 
 {% block scripts%}
@@ -18,8 +19,8 @@
 <div class="main-content-wrapper">
     <div class="category">
         <div class="category-banner image-wrapper">
+            <img src=" {{background_image.image.url}}" alt="{{background_image.alt_text}}" />
         </div>
-
         <div class="category-info">
             <h2>{{category.name}}</h2>
             <p>{{category.description}}</p>
@@ -27,17 +28,7 @@
     </div>
     <div class="products-container grid">
         {% for product in products %}
-        <a href=" {% url 'ciasta_ciasteczka:product_details' product.id%} ">
-        <div class="product-card">
-            <div class="product-image image-wrapper">
-                <img src="{{product.get_main_pic_url}}" alt="">
-            </div>
-            <div class="product-info">
-                <h4>{{product.name}}</h4>
-                <h5>{{product.get_smallest_price}}</h5>
-            </div>
-        </div>
-        </a>
+        {% include 'ciasta_ciasteczka/product_card.html' %}
         {% endfor %}
     </div>
 </div>

@@ -1,0 +1,23 @@
+{% load static %}
+
+<a href=" {% url 'ciasta_ciasteczka:product_details' product.id%} ">
+    <div class="product-card">
+        <div class="product-image image-wrapper">
+            {% if product.get_main_pic %}
+            <img src="{{product.get_main_pic.photo.url}}" alt="{{ product.get_main_pic.photo.alt_text }}">
+            {% else %}
+            <img src=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %}"
+                alt="Default logo (no product image)">
+            {% endif %}
+        </div>
+        <div class="product-info">
+            <h3>{{product.name}}</h3>
+            <div class="price-container">
+                <div class="horizontal-line"></div>
+                <h4>{{product.get_smallest_price}} {{product.product_type.price_unit}}</h4>
+
+                <div class="horizontal-line"></div>
+            </div>
+        </div>
+    </div>
+</a>

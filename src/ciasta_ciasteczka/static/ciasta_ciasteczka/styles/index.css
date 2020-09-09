@@ -36,10 +36,21 @@ section h1 {
 }
 
 
-#home {
+section#home {
     max-width: 100%;
+    min-height: 0 !important;
+    padding: 0 !important;
 }
 
+#home .section-content-wrapper {
+    max-width: 100%;
+    min-height: 0 !important;
+    padding: 0 !important;
+}
+
+.new-products-wrapper {
+    background-color: var(--section-darker-background)
+}
 
 
 #about p span {
@@ -114,6 +125,15 @@ section h1 {
     max-width: 1024px;
     width: 100%;
     height: 100%;
+}
+
+.section-content-wrapper>* {
+    margin: auto;
+}
+
+.new-products-wrapper>* {
+    max-width: 1024px;
+    margin: auto;
 }
 
 .opaque-section {
@@ -264,7 +284,9 @@ section .horizontal-line {
     width: 100%;
 }
 
-
+.carousel-container {
+    max-width: 1024px;
+}
 
 /* Carousel - slideshow */
 /* The dots/bullets/indicators */
@@ -282,7 +304,7 @@ section .horizontal-line {
     position: absolute;
     bottom: 0;
     text-align: center;
-    padding: 1vh 0 1vh 0;
+    padding: 1vh 0 0 0;
     width: 100%;
 }
 
@@ -322,18 +344,27 @@ section .horizontal-line {
 
 /* Slideshow container */
 .slideshow-container img {
-    z-index: 0;
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
     margin: auto;
 }
 
 .slideshow-container {
     z-index: 0;
     width: 100%;
+    max-width: 1024px;
+
+    padding-top: 56.25%;
+    height: 0;
     position: relative;
     margin: auto;
-    border-radius: 10px;
+
 }
+
 
 /* Caption text */
 .caption-text {
@@ -378,12 +409,6 @@ section .horizontal-line {
     color: #f2f2f2;
     background-color: var(--main-bg-accent);
 }
-
-
-
-@media screen and (max-width: 1124px) {}
-
-@media screen and (max-width: 860px) {}
 
 @media screen and (max-width: 768px) {
 
