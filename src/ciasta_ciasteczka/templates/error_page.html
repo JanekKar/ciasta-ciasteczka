@@ -1,0 +1,27 @@
+{% extends 'ciasta_ciasteczka/index.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'ciasta_ciasteczka/styles/error_page.css' %}">
+{% endblock styles %}
+
+{% block title %}Error Page{% endblock title %}
+{% block main-content %}
+<div class="main-content-wrapper">
+    <h1 class='error_code'>
+        {% if error_400 %}
+        {% include '400.html'%}
+        {% elif error_403 %}
+        {% include '403.html'%}
+        {% elif error_404%}
+        {% include '404.html'%}
+        {% elif error_500%}
+        {% include '500.html'%}
+        {% else %}
+        <p>Brak</p>
+        {% endif %}
+    </h1>
+
+    <h1>{{message}}</h1>
+    <a class="button" href="{% url 'ciasta_ciasteczka:index' %}">{{button_value}}</a>
+</div>
+{% endblock main-content %}

@@ -5,8 +5,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% block title %}
-    {% endblock title %}
+    <title>{% block title %}{% endblock title %}</title>
     <link rel="icon" href=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %} " />
     <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/base.css' %} " />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"/>
@@ -30,7 +29,7 @@
         <div class="logo-container">
             <a class="logo" href="/#top">
                 <img class="logo-img" src=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %}"
-                    alt="" /></a>
+                    alt="Ciasta ciasteczka logo" /></a>
         </div>
         <div class="burger">
             <div class="line0"></div>

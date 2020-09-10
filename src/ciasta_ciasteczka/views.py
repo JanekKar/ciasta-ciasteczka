@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, render
 from django.template import loader
 from django.http import HttpResponse, Http404
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 from .models import *
 
@@ -52,7 +53,7 @@ def category(request, category_slug):
             all_products = Product.objects.filter(
                 category=category, hidden=False)
         if len(all_products) == 0:
-            raise Http404
+            raise Http404(_("Category does not exist"))
         else:
             return all_products
 
@@ -97,5 +98,49 @@ def menu(request):
     context.update(get_default_context())
     return HttpResponse(template.render(context))
 
+
+def handler404_test(request):
+    context = get_default_context()
+    context.update({'error_500': True,
+                    'message': _("Sorry, something went wrong."),
+                    'button_value': _('Come back to main page')})
+    return render(request, 'error_page.html',
+                  context=context)
+
+
+def handler400(request, exception):
+    context = get_default_context()
+    context.update({'error_400': True,
+                    'message': _("Sorry, something went wrong."),
+                    'button_value': _('Come back to main page')})
+    return render(request, 'error_page.html',
+                  context=context)
+
+
+def handler403(request, exception):
+    context = get_default_context()
+    context.update({'error_403': True,
+                    'message': _("Sorry, something went wrong."),
+                    'button_value': _('Come back to main page')})
+    return render(request, 'error_page.html',
+                  context=context)
+
+
+def handler404(request, exception):
+    context = get_default_context()
+    context.update({'error_404': True,
+                    'message': _("Sorry, something went wrong."),
+                    'button_value': _('Come back to main page')})
+    return render(request, 'error_page.html',
+                  context=context)
+
+
+def handler500(request):
+    context = get_default_context()
+    context.update({'error_500': True,
+                    'message': _("Sorry, something went wrong."),
+                    'button_value': _('Come back to main page')})
+    return render(request, 'error_page.html',
+                  context=context)
 
 # Create your views here.

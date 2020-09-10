@@ -20,3 +20,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ciasta_ciasteczka.urls')),
 ]
+
+
+handler400 = 'ciasta_ciasteczka.views.handler400'
+handler403 = 'ciasta_ciasteczka.views.handler403'
+handler404 = 'ciasta_ciasteczka.views.handler404'
+handler500 = 'ciasta_ciasteczka.views.handler500'

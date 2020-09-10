@@ -2,6 +2,7 @@ from django.dispatch import receiver
 from django.db import models
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
+from django.utils.html import mark_safe, escape
 
 from . import utils
 
@@ -30,6 +31,10 @@ class Tray(models.Model):
 
     def __str__(self):
         return self.name
+
+    def amount_of_people(self):
+        return '{} - {}'.format(str(self.min_amount_of_people), str(self.max_amount_of_people))
+    amount_of_people.short_description = _('amount of people')
 
 
 class Size(models.Model):
@@ -70,7 +75,7 @@ class Category(models.Model):
     description = models.TextField(verbose_name=_(
         "description"), blank=True, null=True)
     parent = models.ForeignKey("Category", verbose_name=_(
-        "category"), on_delete=models.CASCADE, blank=True, null=True)
+        "parent category"), on_delete=models.CASCADE, blank=True, null=True)
     slug = models.SlugField(verbose_name=_("slug"), unique=True)
 
     def __str__(self):
@@ -92,6 +97,7 @@ class Category(models.Model):
             return False
         else:
             return Product.objects.filter(category=self, hidden=False).exists()
+    has_active_products.short_description = _("visible")
 
 
 class Product(models.Model):
@@ -168,6 +174,12 @@ class ProductPhoto(models.Model):
         'products/'), height_field=None, width_field=None, max_length=None)
     main = models.BooleanField(verbose_name=_("main photo"), default=False)
 
+    def image_tag(self):
+        return mark_safe('<img src="%s" height=70px/>' % escape(self.photo.url))
+
+    image_tag.short_description = _("product image")
+    image_tag.allow_tags = True
+
     def save(self, *args, **kwargs):
         if self.main:
             temp = ProductPhoto.objects.filter(product=self.product, main=True)
@@ -223,6 +235,12 @@ class SlideshowPhoto(models.Model):
     alt_text = models.CharField(verbose_name=_(
         "alternative text"), max_length=100, blank=True, null=True)
     hidden = models.BooleanField(verbose_name=_("hidden"), default=False)
+
+    def image_tag(self):
+        return mark_safe('<img src="%s" height=150px/>' % escape(self.image.url))
+
+    image_tag.short_description = _("image")
+    image_tag.allow_tags = True
 
     def save(self, *args, **kwargs):
         super(SlideshowPhoto, self).save(*args, **kwargs)

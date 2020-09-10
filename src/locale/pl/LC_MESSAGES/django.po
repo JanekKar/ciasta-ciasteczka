@@ -6,11 +6,11 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 0.1.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-09 18:10+0000\n"
+"POT-Creation-Date: 2020-09-10 16:31+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Jan Karaszewski <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -34,180 +34,204 @@ msgstr "ukryj wszystkie produkty w zaznaczoneych kategoriach"
 
 #: ciasta_ciasteczka/actions.py:36
 msgid "show all products in selected categories"
-msgstr "pokarz wszystkie produkty w zaznaczoneych kategoriach"
+msgstr "pokaż wszystkie produkty w zaznaczoneych kategoriach"
 
-#: ciasta_ciasteczka/models.py:15 ciasta_ciasteczka/models.py:44
-msgid "tray"
-msgstr "blacha"
+#: ciasta_ciasteczka/admin.py:32 ciasta_ciasteczka/admin.py:39
+#: ciasta_ciasteczka/admin.py:46
+msgid "no data"
+msgstr "brak danych"
 
-#: ciasta_ciasteczka/models.py:16
-#, fuzzy
-#| msgid "tray"
-msgid "trays"
-msgstr "blachy"
-
-#: ciasta_ciasteczka/models.py:18 ciasta_ciasteczka/models.py:41
-#: ciasta_ciasteczka/models.py:56 ciasta_ciasteczka/models.py:69
-#: ciasta_ciasteczka/models.py:103
-msgid "name"
-msgstr "nazwa"
-
-#: ciasta_ciasteczka/models.py:20
+#: ciasta_ciasteczka/admin.py:33 ciasta_ciasteczka/models.py:21
 msgid "diameter"
 msgstr "średnica"
 
-#: ciasta_ciasteczka/models.py:21
+#: ciasta_ciasteczka/admin.py:40 ciasta_ciasteczka/models.py:22
 msgid "width"
 msgstr "szerokość"
 
-#: ciasta_ciasteczka/models.py:23
+#: ciasta_ciasteczka/admin.py:47 ciasta_ciasteczka/models.py:24
 msgid "length"
 msgstr "długość"
 
-#: ciasta_ciasteczka/models.py:25
+#: ciasta_ciasteczka/admin.py:72 ciasta_ciasteczka/admin.py:78
+msgid "none"
+msgstr "brak"
+
+#: ciasta_ciasteczka/admin.py:73 ciasta_ciasteczka/models.py:78
+msgid "parent category"
+msgstr "kategoria nadrzędna"
+
+#: ciasta_ciasteczka/admin.py:83
+msgid "number of active products"
+msgstr "ilość widoczynch produktów"
+
+#: ciasta_ciasteczka/models.py:16 ciasta_ciasteczka/models.py:49
+msgid "tray"
+msgstr "blacha"
+
+#: ciasta_ciasteczka/models.py:17
+msgid "trays"
+msgstr "blachy"
+
+#: ciasta_ciasteczka/models.py:19 ciasta_ciasteczka/models.py:46
+#: ciasta_ciasteczka/models.py:61 ciasta_ciasteczka/models.py:74
+#: ciasta_ciasteczka/models.py:109
+msgid "name"
+msgstr "nazwa"
+
+#: ciasta_ciasteczka/models.py:26
 msgid "minimum amount of people"
 msgstr "minimalna ilość osób"
 
-#: ciasta_ciasteczka/models.py:27
+#: ciasta_ciasteczka/models.py:28
 msgid "maximum amount of people"
 msgstr "maxymalna ilość osób"
 
-#: ciasta_ciasteczka/models.py:38 ciasta_ciasteczka/models.py:147
+#: ciasta_ciasteczka/models.py:37
+msgid "amount of people"
+msgstr "ilość osób"
+
+#: ciasta_ciasteczka/models.py:43 ciasta_ciasteczka/models.py:153
 msgid "size"
 msgstr "rozamiar"
 
-#: ciasta_ciasteczka/models.py:39
-#, fuzzy
-#| msgid "size"
+#: ciasta_ciasteczka/models.py:44
 msgid "sizes"
 msgstr "rozamiary"
 
-#: ciasta_ciasteczka/models.py:42
+#: ciasta_ciasteczka/models.py:47
 msgid "weight"
 msgstr "waga"
 
-#: ciasta_ciasteczka/models.py:53
+#: ciasta_ciasteczka/models.py:58
 msgid "product type"
 msgstr "typ produktu"
 
-#: ciasta_ciasteczka/models.py:54
-#, fuzzy
-#| msgid "product type"
+#: ciasta_ciasteczka/models.py:59
 msgid "product types"
 msgstr "typy produktów"
 
-#: ciasta_ciasteczka/models.py:57
+#: ciasta_ciasteczka/models.py:62
 msgid "price unit"
 msgstr "jednostka ceny"
 
-#: ciasta_ciasteczka/models.py:66 ciasta_ciasteczka/models.py:73
-#: ciasta_ciasteczka/models.py:114
+#: ciasta_ciasteczka/models.py:71 ciasta_ciasteczka/models.py:120
 msgid "category"
 msgstr "kategoria"
 
-#: ciasta_ciasteczka/models.py:67
-#, fuzzy
-#| msgid "category"
+#: ciasta_ciasteczka/models.py:72
 msgid "categories"
 msgstr "kategorie"
 
-#: ciasta_ciasteczka/models.py:71 ciasta_ciasteczka/models.py:104
+#: ciasta_ciasteczka/models.py:76 ciasta_ciasteczka/models.py:110
 msgid "description"
 msgstr "opis"
 
-#: ciasta_ciasteczka/models.py:74
+#: ciasta_ciasteczka/models.py:79
 msgid "slug"
 msgstr "slug"
 
-#: ciasta_ciasteczka/models.py:100 ciasta_ciasteczka/models.py:149
-#: ciasta_ciasteczka/models.py:164
+#: ciasta_ciasteczka/models.py:100
+msgid "visible"
+msgstr "widoczna"
+
+#: ciasta_ciasteczka/models.py:106 ciasta_ciasteczka/models.py:155
+#: ciasta_ciasteczka/models.py:170
 msgid "product"
 msgstr "produkt"
 
-#: ciasta_ciasteczka/models.py:101
-#, fuzzy
-#| msgid "product"
+#: ciasta_ciasteczka/models.py:107
 msgid "products"
 msgstr "produkty"
 
-#: ciasta_ciasteczka/models.py:106
+#: ciasta_ciasteczka/models.py:112
 msgid "ingredients"
 msgstr "składniki"
 
-#: ciasta_ciasteczka/models.py:108
+#: ciasta_ciasteczka/models.py:114
 msgid "allergens"
 msgstr "alergeny"
 
-#: ciasta_ciasteczka/models.py:109 ciasta_ciasteczka/models.py:225
+#: ciasta_ciasteczka/models.py:115 ciasta_ciasteczka/models.py:237
 msgid "hidden"
 msgstr "ukryty"
 
-#: ciasta_ciasteczka/models.py:111
+#: ciasta_ciasteczka/models.py:117
 msgid "creation date"
 msgstr "data utworzenia"
 
-#: ciasta_ciasteczka/models.py:113
+#: ciasta_ciasteczka/models.py:119
 msgid "type"
 msgstr "typ"
 
-#: ciasta_ciasteczka/models.py:121
-#, fuzzy
-#| msgid "product photo"
+#: ciasta_ciasteczka/models.py:127
 msgid "number of photos"
 msgstr "ilość zdjęć"
 
-#: ciasta_ciasteczka/models.py:126
-#, fuzzy
-#| msgid "category"
+#: ciasta_ciasteczka/models.py:132
 msgid "number of categories"
-msgstr "ilość produktów"
+msgstr "ilość kategori"
 
-#: ciasta_ciasteczka/models.py:143
+#: ciasta_ciasteczka/models.py:149
 msgid "size and price of product"
 msgstr "rozmiar i cena produkty"
 
-#: ciasta_ciasteczka/models.py:144
-#, fuzzy
-#| msgid "size and price of product"
+#: ciasta_ciasteczka/models.py:150
 msgid "sizes and prices of products"
 msgstr "rozmiary i ceny produktów"
 
-#: ciasta_ciasteczka/models.py:151
+#: ciasta_ciasteczka/models.py:157
 msgid "price"
 msgstr "cena"
 
-#: ciasta_ciasteczka/models.py:160
+#: ciasta_ciasteczka/models.py:166
 msgid "product photo"
 msgstr "zdjęcie produktu"
 
-#: ciasta_ciasteczka/models.py:161
-#, fuzzy
-#| msgid "product photo"
-msgid "product photos"
-msgstr "zdjęcia produktów"
-
-#: ciasta_ciasteczka/models.py:166 ciasta_ciasteczka/models.py:224
-msgid "alternative text"
-msgstr "text alternatywny"
-
 #: ciasta_ciasteczka/models.py:167
+msgid "product photos"
+msgstr "zdjęcia produktu"
+
+#: ciasta_ciasteczka/models.py:172 ciasta_ciasteczka/models.py:236
+msgid "alternative text"
+msgstr "tekst alternatywny"
+
+#: ciasta_ciasteczka/models.py:173 ciasta_ciasteczka/models.py:242
 msgid "image"
 msgstr "zdjęcie"
 
-#: ciasta_ciasteczka/models.py:169
+#: ciasta_ciasteczka/models.py:175
 msgid "main photo"
 msgstr "zdjęcie główne"
 
-#: ciasta_ciasteczka/models.py:217
+#: ciasta_ciasteczka/models.py:180
+msgid "product image"
+msgstr "zdjęcie produktu"
+
+#: ciasta_ciasteczka/models.py:229
 msgid "slideshow photot"
 msgstr "zdjęcie do pokazu slajdów"
 
-#: ciasta_ciasteczka/models.py:218
-#, fuzzy
-#| msgid "slideshow photot"
+#: ciasta_ciasteczka/models.py:230
 msgid "slideshow photos"
 msgstr "zdjęcia do pokazu slajdów"
 
-#: ciasta_ciasteczka/models.py:221
+#: ciasta_ciasteczka/models.py:233
 msgid "text"
 msgstr "tekst"
+
+#: ciasta_ciasteczka/views.py:56
+msgid "Category does not exist"
+msgstr "Dana kategoria nie istnieje"
+
+#: ciasta_ciasteczka/views.py:105 ciasta_ciasteczka/views.py:112
+#: ciasta_ciasteczka/views.py:119 ciasta_ciasteczka/views.py:126
+#: ciasta_ciasteczka/views.py:133
+msgid "Sorry, something went wrong."
+msgstr "Przepraszamy, coś poszło nie tak."
+
+#: ciasta_ciasteczka/views.py:106 ciasta_ciasteczka/views.py:113
+#: ciasta_ciasteczka/views.py:120 ciasta_ciasteczka/views.py:127
+#: ciasta_ciasteczka/views.py:134
+msgid "Come back to main page"
+msgstr "Powrót do strony głównej"

@@ -51,6 +51,11 @@ main {
     width: 100%;
     margin: auto;
     background-color: whitesmoke;
+
+    /* background-image: url(../assets/banner/BannerCiastaCiasteczka.jpg);
+    background-repeat: repeat-y;
+    background-size: contain;
+    background-attachment: fixed; */
     min-height: 94vh;
 }
 

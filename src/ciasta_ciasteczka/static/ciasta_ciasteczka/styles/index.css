@@ -257,14 +257,6 @@ section .horizontal-line {
 
 }
 
-
-@font-face {
-    font-family: Nickainley;
-    src: url(../fonts/Nickainley.otf);
-}
-
-
-
 .resp-iframe {
     position: absolute;
     top: 0;
