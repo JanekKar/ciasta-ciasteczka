@@ -11,3 +11,5 @@ COPY . /code/
 
 RUN apt-get update && apt-get install -y \
     gettext 
+
+RUN mkdir /code/staticfiles

@@ -135,3 +135,8 @@ db/*
 
 media
 media/*
+
+
+.env.prod*
+
+*_volume

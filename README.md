@@ -12,8 +12,8 @@ Repository for development of web page for Ciasta, Ciasteczka company
    * [x] Indicators
    * [x] Automatic slideshow
    * [x] Arrows for next and previous
- * [ ] Slogan
- * [ ] Some vague information about company
+ * [x] Slogan
+ * [x] Some vague information about company
   
 ### About Us
  * [x] Info about company
@@ -28,19 +28,19 @@ Repository for development of web page for Ciasta, Ciasteczka company
 
 
 ## menu.html
-* [ ] Grid with products
+* [x] Grid with products
 * [ ] Filters
 
 
 ## how-to-order.html
-* [ ] Step by step instruction - in progress
+* [x] Step by step instruction
 
 ## Product Page
-* [ ] Same category items ❓️
-* [ ] Slideshow
-* [ ] Product name
-* [ ] Description
-* [ ] Prices based on sizes
+* [x] Same category items ❓️
+* [x] Slideshow
+* [x] Product name
+* [x] Description
+* [x] Prices based on sizes
 
 
 ## Html Templates 
@@ -107,9 +107,9 @@ Mały tort, Średni, Średni-większy, Duży
 
 
 Models:
-* [ ] product
-* [ ] type
-* [ ] category
-* [ ] size
-* [ ] product_photo
+* [x] product
+* [x] type
+* [x] category
+* [x] size
+* [x] product_photo
 
