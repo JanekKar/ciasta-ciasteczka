@@ -10,8 +10,9 @@ app_name = "ciasta_ciasteczka"
 urlpatterns = [
     path('', views.index, name="index"),
     path('menu/', views.menu, name="menu"),
-    path('category/<str:category_slug>', views.category, name="category"),
-    path('product/<int:product_id>', views.product_details, name="product_details"),
+    path('kategorie/<str:category_slug>', views.category, name="category"),
+    path('produkt/<int:product_id>', views.product_details, name="product_details"),
+    path('ciasteczka/', views.cookies, name="cookies"),
     path('404/', views.handler404_test, name='404'),
 ]
 

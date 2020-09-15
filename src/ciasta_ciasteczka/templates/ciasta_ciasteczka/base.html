@@ -5,9 +5,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}{% endblock title %}</title>
+    <title>{% block title %}{% endblock title %} | Ciasta, Ciasteczka</title>
     <link rel="icon" href=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %} " />
     <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/base.css' %} " />
+    <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/cookie_bar.css' %} " />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"/>
     {% block styles %}
     {% endblock styles %}
@@ -15,6 +16,7 @@
 </head>
 
 <body>
+    {%include 'ciasta_ciasteczka/cookie_bar.html'%}
     <div class="spinner-wrapper">
         <div class="lds-ring">
             <div></div>
@@ -23,7 +25,7 @@
             <div></div>
         </div>
     </div>
-
+    
     <div id="top"></div>
     <nav>
         <div class="logo-container">
@@ -74,7 +76,7 @@
         {% block main-content %}
         {% endblock main-content %}
     </main>
-    <footer>
+    <footer class='shifted'>
         <div class="social-media-wrapper">
             <div class="social-media">
                 <p>Obserwuj mnie na mediach społecznościowych:</p>
@@ -95,13 +97,13 @@
             </div>
         </div>
         <div class="columns-container">
-            <div class="column-wrapper">
+            {% comment %} <div class="column-wrapper">
                 <div class="column" id="information">
                     <h2>Informacje</h2>
                     <p>Ciasta ciasteczka, to mała firma wykonująca wypieki na zamówienie.</p>
                 </div>
-            </div>
-            <div class="vertical-line"></div>
+            </div> {% endcomment %}
+            {% comment %} <div class="vertical-line"></div> {% endcomment %}
             <div class="column-wrapper id=" contact"">
                 <div class="column">
 
@@ -123,8 +125,11 @@
                         </p>
                     </div>  
                 </div>
-            </div>
-            <div class="vertical-line"></div>
+            </div><div class="logo-container">
+            <a class="logo" href="/#top">
+                <img class="logo-img" src=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %}"
+                    alt="Ciasta ciasteczka logo" /></a>
+        </div>
             <div class="column-wrapper">
                 <div class="column">
                     <h2>Nawigacja</h2>

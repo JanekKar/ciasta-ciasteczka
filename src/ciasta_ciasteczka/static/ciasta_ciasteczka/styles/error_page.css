@@ -52,3 +52,21 @@ main {
     margin: auto;
     text-align: center;
 }
+
+@media screen and (max-width:768px) {
+    .main-content-wrapper {
+        padding-top: 15vh;
+    }
+
+    .error_code {
+        height: 10rem;
+        font-size: 10rem;
+        margin-bottom: 5vh;
+    }
+
+    .button {
+        margin: 10vh auto 10vh auto;
+        font-size: 1rem;
+        width: 70%;
+    }
+}

@@ -99,6 +99,16 @@ def menu(request):
     return HttpResponse(template.render(context))
 
 
+def cookies(request):
+    template_name = 'ciasta_ciasteczka/cookies.html'
+    template = loader.get_template(template_name)
+    context = {
+        "": "",
+    }
+    context.update(get_default_context())
+    return HttpResponse(template.render(context))
+
+
 def handler404_test(request):
     context = get_default_context()
     context.update({'error_500': True,

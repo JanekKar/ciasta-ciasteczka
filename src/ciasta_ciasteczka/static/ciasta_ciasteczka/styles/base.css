@@ -70,7 +70,7 @@ img {
 }
 
 /* Container for logo image */
-.logo-container {
+nav .logo-container {
     position: absolute;
     left: 5%;
     top: 0;
@@ -78,7 +78,7 @@ img {
     width: 125px;
 }
 
-.logo-container>.logo {
+nav .logo-container>.logo {
     width: fit-content;
 }
 
@@ -234,11 +234,24 @@ footer {
     bottom: 0;
 }
 
+footer.shifted {
+    margin-bottom: 5vh;
+}
+
 footer>.social-media-wrapper {
     width: 100%;
     padding: 0.5vh;
 
     background-color: var(--main-bg-accent);
+}
+
+
+footer .logo-container {
+    width: 200px;
+}
+
+footer .logo-container>.logo {
+    width: fit-content;
 }
 
 .social-media {
@@ -398,7 +411,7 @@ footer #contact {
         width: 90%;
     }
 
-    .logo-container {
+    nav .logo-container {
         left: 3%;
     }
 }
@@ -431,7 +444,11 @@ footer #contact {
         top: 100%;
     }
 
-    .logo-container {
+    footer.shifted {
+        margin-bottom: 7vh;
+    }
+
+    nav .logo-container {
         position: absolute;
         top: 0;
         z-index: 2;
@@ -550,6 +567,11 @@ footer #contact {
         flex-direction: column;
         width: 100%;
         padding: 0 1vw 0 1vw;
+    }
+
+    footer .logo-container {
+        height: 30vh;
+        margin: auto;
     }
 
     .columns-container>.column {
