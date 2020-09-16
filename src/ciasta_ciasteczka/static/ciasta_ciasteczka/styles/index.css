@@ -483,18 +483,3 @@ section .horizontal-line {
         font-size: 1.2rem;
     }
 }
-
-
-
-
-/* 
-    TODO
-    media @ min-width 1200
-    media @ min-width 992
-    media @ min-width 768
-            max-width 767
-
-
-    usunąć lub poprawić funkcję otwierająca category-container
-
- */

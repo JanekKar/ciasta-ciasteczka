@@ -28,6 +28,9 @@ Strona Główna
                         <img src=" {{image.image.url}}" alt="{{image.alt_text}}" />
                         <div class="caption-text">{{image.text}}</div>
                     </div>
+                    {% empty %}
+                    <img src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %}"
+                    alt="Ciasta ciasteczka logo" /></a>
                     {% endfor %}
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -88,7 +91,7 @@ Strona Główna
                     Firma również posiada wszystkie wymagane pozwolenia sanepidu.
                 </p>
                 <div class="logo-wrapper">
-                    <img src=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %} " alt="">
+                    <img src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %} " alt="">
                 </div>
             </div>
         </div>

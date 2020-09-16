@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}{% endblock title %} | Ciasta, Ciasteczka</title>
-    <link rel="icon" href=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %} " />
+    <link rel="icon" href=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %} " />
     <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/base.css' %} " />
     <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/cookie_bar.css' %} " />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"/>
@@ -30,7 +30,7 @@
     <nav>
         <div class="logo-container">
             <a class="logo" href="/#top">
-                <img class="logo-img" src=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %}"
+                <img class="logo-img" src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %}"
                     alt="Ciasta ciasteczka logo" /></a>
         </div>
         <div class="burger">
@@ -45,16 +45,18 @@
                     <ul>
                         {% for category, sub_categories in categories.items %}
                         <li class="category-container">
-                            <h2>{{category}}</h2> <ul>
+                            <h2>{{category.capitalize}}</h2> <ul>
                             {% for sub_category in sub_categories%}
                                 {% if sub_category.has_active_products %}
                                 <li class="link-btn">
-                                    <a href="{% url 'ciasta_ciasteczka:category' sub_category.slug %}"><span>{{sub_category.name}}</span></a>
+                                    <a href="{% url 'ciasta_ciasteczka:category' sub_category.slug %}"><span>{{sub_category.name.capitalize}}</span></a>
                                 </li>
                                 {% endif %}
                             {% endfor %}
                             </ul>
                         </li>
+                        {% empty %}
+                        <h1>No products found in database!!</h1>
                         {% endfor %}
                     </ul>
                 </div>
@@ -127,7 +129,7 @@
                 </div>
             </div><div class="logo-container">
             <a class="logo" href="/#top">
-                <img class="logo-img" src=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %}"
+                <img class="logo-img" src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %}"
                     alt="Ciasta ciasteczka logo" /></a>
         </div>
             <div class="column-wrapper">

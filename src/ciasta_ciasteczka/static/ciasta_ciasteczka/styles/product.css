@@ -3,6 +3,7 @@
     margin: auto;
     background-color: var(--section-background);
     height: 100%;
+    box-shadow: 0 7px 7px 5px gray;
 }
 
 .grid {

@@ -138,9 +138,12 @@ class Product(models.Model):
         else:
             return None
 
-    def get_smallest_price(self):
-        return SizeProductPrice.objects.filter(
-            product=self).order_by('price')[0].price
+    def get_lowest_price(self):
+        prices = SizeProductPrice.objects.filter(product=self).order_by('price')
+        if len(prices):
+            return prices[0].price
+        else:
+            return _('no data').capitalize()
 
 
 class SizeProductPrice(models.Model):

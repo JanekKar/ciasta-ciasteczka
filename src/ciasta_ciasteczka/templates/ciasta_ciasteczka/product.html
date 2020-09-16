@@ -1,9 +1,8 @@
 {% extends 'ciasta_ciasteczka/base.html' %}
 {% load static %}
 
-
 {% block title %}
-{{product.name}}
+{{product.name.capitalize}}
 {% endblock title %}
 
 {% block styles %}
@@ -27,7 +26,7 @@
                 <img src="{{image.photo.url}}" alt={{ image.alt_text}}>
             </div>
             {% empty %}
-            <img src=" {% static 'ciasta_ciasteczka/assets/logo/CiastaCiasteczka_500px.png' %}"
+            <img src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %}"
                 alt="Default logo (no product image)">
             {% endfor %}
 
@@ -43,7 +42,7 @@
             </div>
         </div>
         <div class="product-info grid-cell">
-            <h1 class="name">{{product.name}}</h1>
+            <h1 class="name">{{product.name.capitalize}}</h1>
             <p class="description">{{ product.description }}</p>
             {% if sizes %}
             <div class="size-container">
@@ -67,6 +66,9 @@
                     {% else %}
                     <h6>no info</h6>
                     {%endif%}
+                </div>
+                {% empty %}<div class="size">
+                    <h3>No size info</h3>
                 </div>
                 {% endfor %}
             </div>

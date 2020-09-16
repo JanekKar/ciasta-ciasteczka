@@ -14,7 +14,7 @@
 
     background-color: var(--main-bg-accent);
     font-family: var(--roboto-font);
-    box-shadow: 10px 0 10px lightslategray;
+    box-shadow: 0 -1px 10px gray
 }
 
 .cookie-bar p,

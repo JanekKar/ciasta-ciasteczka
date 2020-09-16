@@ -6,6 +6,8 @@
         <li>
             {% include "ciasta_ciasteczka/product_card.html" %}
         </li>
+        {% empty %}
+        <h1 class="no-products">No products found in database!!</h1>
         {% endfor %}
     </ul>
 </div>

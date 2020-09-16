@@ -6,6 +6,12 @@
     height: 100%;
 }
 
+.news .no-products {
+    grid-column: col-start -1 / -1;
+    padding: 0;
+    text-align: center;
+}
+
 .news h1 {
     display: block;
     text-align: center;
