@@ -9,17 +9,12 @@ services:
             -  ../db:/var/lib/mysql
         env_file: 
             - ./.env.prod.db
-        environment: 
-            MYSQL_ROOT_PASSWORD: ${SQL_ROOT_PASSWORD}
-            MYSQL_DATABASE: ${SQL_DATABASE}
-            MYSQL_USER: ${SQL_USER}
-            MYSQL_PASSWORD: ${SQL_PASSWORD} 
-            
+
     web:
         build:
             context: ../src
             dockerfile: ../docker/Dockerfile.prod
-        command: gunicorn cc_project.wsgi:application --bind 0.0.0.0:8000
+        command: bash -c "python manage.py migrate && django-admin compilemessages && python manage.py collectstatic --noinput && gunicorn cc_project.wsgi:application --bind 0.0.0.0:8000"
         expose:
             - 8000
         env_file: 

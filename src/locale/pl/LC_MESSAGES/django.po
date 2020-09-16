@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-10 16:31+0000\n"
+"POT-Creation-Date: 2020-09-16 08:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jan Karaszewski <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -220,18 +220,22 @@ msgstr "zdjęcia do pokazu slajdów"
 msgid "text"
 msgstr "tekst"
 
+#: ciasta_ciasteczka/templates/admin/base_site.html:5
+msgid "Django site admin"
+msgstr ""
+
 #: ciasta_ciasteczka/views.py:56
 msgid "Category does not exist"
 msgstr "Dana kategoria nie istnieje"
 
-#: ciasta_ciasteczka/views.py:105 ciasta_ciasteczka/views.py:112
-#: ciasta_ciasteczka/views.py:119 ciasta_ciasteczka/views.py:126
-#: ciasta_ciasteczka/views.py:133
+#: ciasta_ciasteczka/views.py:115 ciasta_ciasteczka/views.py:124
+#: ciasta_ciasteczka/views.py:133 ciasta_ciasteczka/views.py:142
+#: ciasta_ciasteczka/views.py:151
 msgid "Sorry, something went wrong."
 msgstr "Przepraszamy, coś poszło nie tak."
 
-#: ciasta_ciasteczka/views.py:106 ciasta_ciasteczka/views.py:113
-#: ciasta_ciasteczka/views.py:120 ciasta_ciasteczka/views.py:127
-#: ciasta_ciasteczka/views.py:134
+#: ciasta_ciasteczka/views.py:116 ciasta_ciasteczka/views.py:125
+#: ciasta_ciasteczka/views.py:134 ciasta_ciasteczka/views.py:143
+#: ciasta_ciasteczka/views.py:152
 msgid "Come back to main page"
 msgstr "Powrót do strony głównej"
