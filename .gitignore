@@ -140,3 +140,5 @@ media/*
 .env.prod*
 
 *_volume
+
+notes

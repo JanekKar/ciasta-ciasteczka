@@ -17,6 +17,7 @@ services:
         command: bash -c "python manage.py migrate && django-admin compilemessages && python manage.py runserver 0.0.0.0:8000"
         volumes:
             - ../src:/code
+            - ../media_volume:/code/mediafiles
         ports:
             - 8000:8000
         env_file: 
