@@ -3,11 +3,10 @@ from django.db import models
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from django.utils.html import mark_safe, escape
-
-from . import utils
-
-import os
+from django.urls import reverse
 from PIL import Image
+from . import utils
+import os
 
 
 class Tray(models.Model):
@@ -85,6 +84,10 @@ class Category(models.Model):
         self.slug = slugify(utils.convert_to_ASCI_characters(self.name))
         super(Category, self).save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        return reverse('ciasta_ciasteczka:category',
+                       args=[self.slug])
+
     def is_parent(self):
         return self.parent is None
 
@@ -115,12 +118,17 @@ class Product(models.Model):
     hidden = models.BooleanField(verbose_name=_("hidden"), default=False)
     creation_date = models.DateTimeField(
         verbose_name=_("creation date"), auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
     product_type = models.ForeignKey(ProductType, verbose_name=_(
         "type"), on_delete=models.CASCADE, default=None, blank=False)
     category = models.ManyToManyField(Category, verbose_name=_("category"),)
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('ciasta_ciasteczka:product_details',
+                       args=[self.id])
 
     def number_of_photos(self):
         return len(ProductPhoto.objects.filter(product=self,))
@@ -139,7 +147,8 @@ class Product(models.Model):
             return None
 
     def get_lowest_price(self):
-        prices = SizeProductPrice.objects.filter(product=self).order_by('price')
+        prices = SizeProductPrice.objects.filter(
+            product=self).order_by('price')
         if len(prices):
             return prices[0].price
         else:
@@ -189,6 +198,11 @@ class ProductPhoto(models.Model):
             if temp:
                 temp.update(main=False)
         super(ProductPhoto, self).save(*args, **kwargs)
+        imag = Image.open(self.photo.path)
+        if imag.width > 1024:
+            output_size = (1024, 1024)
+            imag.thumbnail(output_size)
+            imag.save(self.photo.path)
 
     def __str__(self):
         return self.alt_text

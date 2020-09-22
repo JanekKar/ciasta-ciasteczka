@@ -1,0 +1,36 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /admin/*
+Disallow: /www*
+User-agent: Baiduspider
+Disallow: /
+User-agent: YandexBot
+Disallow: /
+User-agent: Sogou Pic Spider/3.0
+Disallow: /
+User-agent: Sogou head spider/3.0
+Disallow: /
+User-agent: Sogou web spider/4.0
+Disallow: /
+User-agent: Sogou Orion spider/3.0
+Disallow: /
+User-agent: Sogou-Test-Spider/4.0
+Disallow: /
+
+User-agent: Googlebot
+Allow: /
+User-agent: DuckDuckBot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+
+
+Sitemap: http://www.ciastaciasteczka.pl/sitemap.xml
+Sitemap: https://www.ciastaciasteczka.pl/sitemap.xml
+
+
+
+
+
+
