@@ -215,13 +215,13 @@ nav .logo-container>.logo {
 }
 
 .category-container a {
-    min-height: 1.6rem;
+    min-height: 1.8rem;
     height: auto;
     padding: 0;
 }
 
 .category-container a span {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0.1rem;
 }
 
