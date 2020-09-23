@@ -19,7 +19,11 @@ Menu
 <div class="main-content-wrapper">
     <div class="category">
         <div class="category-banner image-wrapper">
+            {% if background_image %}
             <img src=" {{background_image.image.url}}" alt="{{background_image.alt_text}}" />
+            {% else %}
+            <img src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %}" alt="Ciasta ciasteczka logo" />
+            {% endif %}
         </div>
         <div class="category-info">
             <h2>{{category.name}}</h2>

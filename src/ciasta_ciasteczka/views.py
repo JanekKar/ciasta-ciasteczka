@@ -62,7 +62,11 @@ def category(request, category_slug):
 
     def get_random_background_image():
         images = SlideshowPhoto.objects.filter(hidden=False)
-        return random.choice(images)
+        if images:
+            return random.choice(images)
+        else:
+            return None
+
     template_name = 'ciasta_ciasteczka/menu.html'
     template = loader.get_template(template_name)
     category = get_category()
