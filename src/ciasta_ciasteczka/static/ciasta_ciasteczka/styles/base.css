@@ -182,6 +182,14 @@ nav .logo-container>.logo {
     list-style: none;
 }
 
+.sub-menu .link-btn span {
+    letter-spacing: normal;
+}
+
+.sub-menu h2 {
+    letter-spacing: 2px;
+}
+
 /* Category container in submenu */
 .category-container {
     height: auto;
