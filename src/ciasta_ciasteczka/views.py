@@ -9,7 +9,7 @@ from .models import *
 import random
 
 
-def get_default_context(request):
+def get_default_context():
     categories = {}
     parent_categories = Category.objects.filter(parent=None)
     for parent in parent_categories:
@@ -26,7 +26,6 @@ def get_default_context(request):
         "year": timezone.now().year,
         'categories': categories,
         'new_products': Product.objects.all().order_by('-creation_date')[:4],
-        'absolute_uri': request.build_absolute_uri
     }
 
 
@@ -37,7 +36,7 @@ def index(request):
         "slideshow_images": SlideshowPhoto.objects.filter(hidden=False),
         "": "",
     }
-    context.update(get_default_context(request))
+    context.update(get_default_context())
     return HttpResponse(template.render(context))
 
 
@@ -73,7 +72,7 @@ def category(request, category_slug):
         'background_image': get_random_background_image(),
         "": "",
     }
-    context.update(get_default_context(request))
+    context.update(get_default_context())
     return HttpResponse(template.render(context))
 
 
@@ -86,7 +85,7 @@ def product_details(request, product_id):
         'sizes': SizeProductPrice.objects.filter(product_id=product_id).order_by('price'),
         "": "",
     }
-    context.update(get_default_context(request))
+    context.update(get_default_context())
     return HttpResponse(template.render(context))
 
 
@@ -96,7 +95,7 @@ def menu(request):
     context = {
         "": "",
     }
-    context.update(get_default_context(request))
+    context.update(get_default_context())
     return HttpResponse(template.render(context))
 
 
@@ -106,12 +105,12 @@ def cookies(request):
     context = {
         "": "",
     }
-    context.update(get_default_context(request))
+    context.update(get_default_context())
     return HttpResponse(template.render(context))
 
 
 def handler404_test(request):
-    context = get_default_context(request)
+    context = get_default_context()
     context.update({'error_500': True,
                     'message': _("Sorry, something went wrong."),
                     'button_value': _('Come back to main page')})
@@ -120,7 +119,7 @@ def handler404_test(request):
 
 
 def handler400(request, exception):
-    context = get_default_context(request)
+    context = get_default_context()
     context.update({'error_400': True,
                     'message': _("Sorry, something went wrong."),
                     'button_value': _('Come back to main page')})
@@ -129,7 +128,7 @@ def handler400(request, exception):
 
 
 def handler403(request, exception):
-    context = get_default_context(request)
+    context = get_default_context()
     context.update({'error_403': True,
                     'message': _("Sorry, something went wrong."),
                     'button_value': _('Come back to main page')})
@@ -138,7 +137,7 @@ def handler403(request, exception):
 
 
 def handler404(request, exception):
-    context = get_default_context(request)
+    context = get_default_context()
     context.update({'error_404': True,
                     'message': _("Sorry, something went wrong."),
                     'button_value': _('Come back to main page')})
@@ -147,7 +146,7 @@ def handler404(request, exception):
 
 
 def handler500(request):
-    context = get_default_context(request)
+    context = get_default_context()
     context.update({'error_500': True,
                     'message': _("Sorry, something went wrong."),
                     'button_value': _('Come back to main page')})

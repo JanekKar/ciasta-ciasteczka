@@ -47,6 +47,11 @@ nav {
     box-shadow: 0px 5px 5px gray;
 }
 
+nav * {
+
+    font-family: var(--roboto-font) !important;
+}
+
 main {
     width: 100%;
     margin: auto;
@@ -57,6 +62,8 @@ main {
     background-size: contain;
     background-attachment: fixed; */
     min-height: 94vh;
+
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .main-content-wrapper {
@@ -118,7 +125,7 @@ nav .logo-container>.logo {
     letter-spacing: 2px;
     font-weight: 550;
     font-size: 1.3rem;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: var(--roboto-font);
     text-transform: capitalize;
     color: white;
     cursor: pointer;
@@ -200,14 +207,13 @@ nav .logo-container>.logo {
 }
 
 .category-container a {
-    min-height: 1.1rem;
+    min-height: 1.6rem;
     height: auto;
     padding: 0;
 }
 
 .category-container a span {
-    font-family: sans-serif;
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 0.1rem;
 }
 
@@ -323,7 +329,7 @@ footer .column h2 {
 
 footer .column p {
     color: white;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: var(--roboto-font);
 }
 
@@ -358,11 +364,16 @@ footer .links-container>a>span {
     font-family: var(--roboto-font);
     display: block;
     padding-top: 1vh;
-    font-size: 1rem;
+    font-size: 1.2rem;
+}
+
+footer .links-container>a {
+    display: block;
+    height: 1.5rem;
 }
 
 footer .links-container>a:hover span {
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid white;
 }
 
 footer #information {

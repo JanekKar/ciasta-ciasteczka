@@ -8,6 +8,7 @@
     <meta name="author" content="Jan Karaszewski">
     <meta name="description" content="Ciasta, ciasteckza, torty i inne słodkości wykonywane na zamówienie.">
 
+    <meta property="og:url" content="https://ciastaciasteczka.pl">
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Ciasta, Ciasteczka"/>
     <meta property="og:description" content="Ciasta, ciasteckza, torty i inne słodkości wykonywane na zamówienie." /> 
@@ -15,7 +16,7 @@
 
     <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1" />
 
-    <link rel="canonical" href="{{absolute_uri}}"/>
+    <link rel="canonical" href="https://ciastaciasteczka.pl"/>
 
     <title>{% block title %}{% endblock title %} | Ciasta, Ciasteczka</title>
 
@@ -23,6 +24,7 @@
     <link rel="icon" href="{% static 'ciasta_ciasteczka/assets/logo/favicon.ico' %}" type="image/x-icon">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap"/> 
     <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/base.css' %} " />
     <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/cookie_bar.css' %} " />
     {% block styles %}
@@ -61,7 +63,8 @@
                     <ul>
                         {% for category, sub_categories in categories.items %}
                         <li class="category-container">
-                            <h2>{{category.capitalize}}</h2> <ul>
+                            <h2>{{category.capitalize}}</h2>
+                            <ul>
                             {% for sub_category in sub_categories%}
                                 {% if sub_category.has_active_products %}
                                 <li class="link-btn">
