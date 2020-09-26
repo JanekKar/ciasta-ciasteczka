@@ -19,8 +19,11 @@ def get_default_context():
             if sub_category.has_active_products():
                 active_sub_categories.append(sub_category)
         if len(active_sub_categories) != 0:
+            parent_name = parent.name
+            parent.name = _('all...')
+            active_sub_categories.append(parent)
             categories.update(
-                {parent.name: active_sub_categories})
+                {parent_name: active_sub_categories})
 
     return {
         "year": timezone.now().year,
