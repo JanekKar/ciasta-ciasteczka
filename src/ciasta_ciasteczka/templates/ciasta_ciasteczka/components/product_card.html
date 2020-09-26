@@ -14,7 +14,12 @@
             <h3>{{product.name.capitalize}}</h3>
             <div class="price-container">
                 <div class="horizontal-line"></div>
+                {% if product.get_lowest_price %}
                 <h4>{{product.get_lowest_price}} {{product.product_type.price_unit}}</h4>
+                {% else %}
+                <h4>Brak Danych</h4>
+                {% endif %}
+                
 
                 <div class="horizontal-line"></div>
             </div>

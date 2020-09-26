@@ -8,8 +8,9 @@ Strona Główna
 
 {% block styles %}
 <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/index.css' %} ">
-<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/new_products.css' %} ">
-<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/product_card.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/new_products.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/product_card.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/slideshow.css' %} ">
 {% endblock styles %}
 
 {% block scripts%}
@@ -22,27 +23,10 @@ Strona Główna
     <section id="home" style="padding: 0;">
         <div class="section-content-wrapper">
             <div class="carousel-container">
-                <div class="slideshow-container">
-                    {% for image in slideshow_images %}
-                    <div class="slide fade">
-                        <img src=" {{image.image.url}}" alt="{{image.alt_text}}" />
-                        <div class="caption-text">{{image.text}}</div>
-                    </div>
-                    {% empty %}
-                    <img src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %}"
-                    alt="Ciasta ciasteczka logo" />
-                    {% endfor %}
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                    <div class="dots-container">
-                        {% for image in slideshow_images %}
-                        <span onclick="currentSlide({{forloop.counter}})" class="dot"></span>
-                        {% endfor %}
-                    </div>
-                </div>
+                {% include "ciasta_ciasteczka/components/slideshow.html" %}
             </div>
             <div class="new-products-wrapper">
-                {% include "ciasta_ciasteczka/new_products.html"%}
+                {% include "ciasta_ciasteczka/components/new_products.html"%}
             </div>
         </div>
 

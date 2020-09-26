@@ -45,7 +45,7 @@ class Size(models.Model):
     name = models.CharField(verbose_name=_("name"), max_length=50)
     weight = models.FloatField(verbose_name=_("weight"), blank=True, null=True)
     tray = models.ForeignKey(Tray, verbose_name=_(
-        "tray"), blank=False, null=True, on_delete=models.CASCADE, default=None)
+        "tray"), blank=True, null=True, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
         return self.name
@@ -152,7 +152,7 @@ class Product(models.Model):
         if len(prices):
             return prices[0].price
         else:
-            return _('no data').capitalize()
+            return None
 
 
 class SizeProductPrice(models.Model):
@@ -268,4 +268,9 @@ class SlideshowPhoto(models.Model):
             imag.save(self.image.path)
 
     def __str__(self):
-        return self.text
+        if self.text:
+            return self.text
+        elif self.alt_text:
+            return self.alt_text
+        else:
+            return _("no data")

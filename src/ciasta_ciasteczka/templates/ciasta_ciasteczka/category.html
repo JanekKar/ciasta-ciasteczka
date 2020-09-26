@@ -8,7 +8,7 @@ Menu
 
 {% block styles %}
 <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/menu.css' %} ">
-<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/product_card.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/product_card.css' %} ">
 {% endblock styles %}
 
 {% block scripts%}
@@ -32,7 +32,7 @@ Menu
     </div>
     <div class="products-container grid">
         {% for product in products %}
-        {% include 'ciasta_ciasteczka/product_card.html' %}
+        {% include 'ciasta_ciasteczka/components/product_card.html' %}
         {% endfor %}
     </div>
 </div>

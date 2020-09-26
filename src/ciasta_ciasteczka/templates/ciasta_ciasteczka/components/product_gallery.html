@@ -1,0 +1,20 @@
+{% load static %}
+<div class="gallery">
+    {% for image in product_images  %}
+    <div class="mySlides">
+        <img src="{{image.photo.url}}" alt={{ image.alt_text}}>
+    </div>
+    {% empty %}
+    <img src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %}" alt="Default logo (no product image)">
+    {% endfor %}
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="row">
+        {% for image in product_images %}
+        <div class="column">
+            <img class="thumbnail cursor" src="{{ image.photo.url }}" style="width:100%"
+                onclick="currentSlide({{ forloop.counter }})" alt="{{ image.alt_text }}">
+        </div>
+        {% endfor %}
+    </div>
+</div>

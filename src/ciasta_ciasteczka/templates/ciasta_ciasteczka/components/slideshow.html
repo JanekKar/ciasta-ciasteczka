@@ -1,0 +1,21 @@
+{% load static %}
+
+<div class="slideshow-container">
+    {% for image in slideshow_images %}
+    <div class="slide fade">
+        <img src=" {{image.image.url}}" alt="{{image.alt_text}}" />
+        {% if image.text %}
+        <div class="caption-text">{{image.text}}</div>
+        {% endif %}
+    </div>
+    {% empty %}
+    <img src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %}" alt="Ciasta ciasteczka logo" />
+    {% endfor %}
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="dots-container">
+        {% for image in slideshow_images %}
+        <span onclick="currentSlide({{forloop.counter}})" class="dot"></span>
+        {% endfor %}
+    </div>
+</div>

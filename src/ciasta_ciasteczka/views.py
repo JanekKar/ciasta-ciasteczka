@@ -67,7 +67,7 @@ def category(request, category_slug):
         else:
             return None
 
-    template_name = 'ciasta_ciasteczka/menu.html'
+    template_name = 'ciasta_ciasteczka/category.html'
     template = loader.get_template(template_name)
     category = get_category()
     context = {
@@ -87,16 +87,6 @@ def product_details(request, product_id):
         'product': get_object_or_404(Product, id=product_id, hidden=False),
         'product_images': ProductPhoto.objects.filter(product_id=product_id).order_by('-main'),
         'sizes': SizeProductPrice.objects.filter(product_id=product_id).order_by('price'),
-        "": "",
-    }
-    context.update(get_default_context())
-    return HttpResponse(template.render(context))
-
-
-def menu(request):
-    template_name = 'ciasta_ciasteczka/menu.html'
-    template = loader.get_template(template_name)
-    context = {
         "": "",
     }
     context.update(get_default_context())

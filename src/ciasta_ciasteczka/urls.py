@@ -26,7 +26,6 @@ sitemaps = {
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('menu/', views.menu, name="menu"),
     path('kategorie/<str:category_slug>', views.category, name="category"),
     path('produkt/<int:product_id>', views.product_details, name="product_details"),
     path('ciasteczka/', views.cookies, name="cookies"),

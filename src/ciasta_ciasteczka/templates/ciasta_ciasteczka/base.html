@@ -4,6 +4,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Jan Karaszewski">
     <meta name="description" content="Ciasta, ciasteckza, torty i inne słodkości wykonywane na zamówienie.">
@@ -54,7 +55,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" />
     <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/base.css' %} " />
-    <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/cookie_bar.css' %} " />
+    <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/cookie_bar.css' %} " />
     {% block styles %}
     {% endblock styles %}
 
@@ -62,7 +63,7 @@
 </head>
 
 <body>
-    {%include 'ciasta_ciasteczka/cookie_bar.html'%}
+    {%include 'ciasta_ciasteczka/components/cookie_bar.html'%}
     <div class="spinner-wrapper">
         <div class="lds-ring">
             <div></div>

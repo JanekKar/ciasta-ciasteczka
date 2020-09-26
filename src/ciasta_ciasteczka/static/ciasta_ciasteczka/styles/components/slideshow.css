@@ -1,0 +1,121 @@
+/* Slideshow container */
+.slideshow-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    margin: auto;
+}
+
+.slideshow-container {
+    z-index: 0;
+    width: 100%;
+    max-width: 1024px;
+
+    padding-top: 56.25%;
+    height: 0;
+    position: relative;
+    margin: auto;
+
+}
+
+
+/* Caption text */
+.slideshow-container .caption-text {
+    color: whitesmoke;
+    font-size: 3rem;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8%;
+    width: 100%;
+    text-align: center;
+    font-family: var(--roboto-font);
+    letter-spacing: 2px;
+    background-color: #00000080;
+}
+
+
+.slideshow-container .prev,
+.slideshow-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.slideshow-container .next {
+    right: 0px;
+    border-radius: 3px 0px 0px 3px
+}
+
+.slideshow-container .prev {
+    left: 0px;
+    border-radius: 0px 3px 3px 0px
+}
+
+.slideshow-container .prev:hover,
+.slideshow-container .next:hover {
+    color: #f2f2f2;
+    background-color: var(--main-bg-accent);
+}
+
+/* The dots/bullets/indicators */
+.slideshow-container .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.slideshow-container .dots-container {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.slideshow-container .active-dot {
+    background-color: var(--main-bg-accent);
+}
+
+
+/* Fading animation */
+.slideshow-container .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}

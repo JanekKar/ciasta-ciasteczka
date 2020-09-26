@@ -16,7 +16,8 @@
     padding-top: 5vh;
 }
 
-.grid-cell {
+.grid-cell,
+.gallery {
     width: 100%;
 }
 

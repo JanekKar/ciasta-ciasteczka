@@ -18,6 +18,13 @@
     padding-bottom: 5px;
 }
 
+.cookie-info ol>li>ol {
+    padding: 0 0 0 3%;
+    font-size: 1rem;
+    list-style-position: outside;
+    list-style: lower-alpha;
+}
+
 .cookie-info {
     max-width: 1024px;
     margin: auto;
