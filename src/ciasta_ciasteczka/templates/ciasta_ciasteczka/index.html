@@ -1,0 +1,139 @@
+{% extends 'ciasta_ciasteczka/base.html' %}
+{% load static %}
+
+{% block title %}
+Strona Główna
+{% endblock title %}
+
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/index.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/new_products.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/product_card.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/slideshow.css' %} ">
+{% endblock styles %}
+
+{% block scripts%}
+<script src="{% static 'ciasta_ciasteczka/scripts/index.js' %}"></script>
+<script src="{% static 'ciasta_ciasteczka/scripts/slideshow.js' %}"></script>
+{% endblock scripts%}
+
+{% block main-content %}
+<div class="sections-container">
+    <section id="home" style="padding: 0;">
+        <div class="section-content-wrapper">
+            <div class="carousel-container">
+                {% include "ciasta_ciasteczka/components/slideshow.html" %}
+            </div>
+            <div class="new-products-wrapper">
+                {% include "ciasta_ciasteczka/components/new_products.html"%}
+            </div>
+        </div>
+
+    </section>
+
+    <section id="how-to-order" class="opaque-section">
+        <div class="section-content-wrapper">
+
+            <div class="centered-section">
+                <h1>Jak zamówić?</h1>
+                <ol>
+                    <li>Przejdź do zakłdaki Menu</li>
+                    <li>Wybierz smakołyki na które masz ochotę.</li>
+                    <li>Zastanów się czy odpowiada ci proponowana kompozycja kolorów, smaków i dodatków.
+                        <span class="collapsible-toggle" onClick="open_collapsible()"><img
+                                src="{% static 'ciasta_ciasteczka/icons/info.svg' %} " alt=""> </span>
+                        <p class="collapsible">
+                            Każde zamówienie jest realizowane indywidualnie, bez wykorzystania gotowych półproduktów, co
+                            pozwala na komponowanie dowolnych zestawien kolorostycznych, smakowych, tworzenie
+                            personalizowanych napisów oraz ozdób cukrowych lub kremowych. Wystarczy tylko o to poprosić
+                            przy składaniu zamówienia.
+                        </p>
+                    </li>
+                    <li>Skontaktuj się ze mną telefonicznie, przez facebooka lub instagrama</li>
+                    <li>Złóż zamówienie i ustal dogodny termin odbioru <small>(chwilowo dostępny jest tylko odbiór
+                            osobisty)</small>
+                    </li>
+                    <li><b>Gotowe</b>, teraz już tylko musisz odebrać zamówienie w wyznaczonym terminie</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="section-content-wrapper">
+            <div class="centered-section">
+                <h1>O firmie</h1>
+                <p>
+                    <span>Ciasta, Ciasteczka</span> to niewielka (na razie jednoosobowa) firma tworząca słodki specjały
+                    na indywidualne zamówienia klientów.
+                </p>
+                <p>
+                    Torty, torciki. Ciasta, Ciasteczka. Tarty, tarteletki. Baby, babki i babeczki. Muffiny, ptysie.
+                    Placki, serniki i co tylko można wymarzyć... Wszystko to jest tworzone z wysokiej jakości prduktów -
+                    masła, prawdziwych jaj i sezonowych owoców. </p>
+                <p>
+                    Firma również posiada wszystkie wymagane pozwolenia sanepidu.
+                </p>
+                <div class="logo-wrapper">
+                    <img src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %} " alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="opaque-section">
+        <div class="section-content-wrapper">
+            <div class="centered-section">
+                <h1>Kontakt</h1>
+                <div class="column-container">
+                    <div class="column">
+                        <div class="content-wrapper">
+                            <div class="phone-wrapper wrapper">
+                                <div class="icon-wrapper">
+                                    <img class="icon" src="{% static 'ciasta_ciasteczka/icons/phone.svg' %}" alt=""
+                                        height="64px" width="64px" />
+                                </div>
+                                <a href=" tel:503-178-197">503-178-197</a>
+                            </div>
+                            <div class="address-wrapper wrapper">
+                                <div class="icon-wrapper">
+                                    <img class="icon" src="{% static 'ciasta_ciasteczka/icons/home.svg' %}" alt=""
+                                        height="64px" width="64px" />
+                                </div>
+                                <p>
+                                    Punkt Odbioru<br>ul. Kowieńska 4, Białystok<br>Wejście od
+                                    strony
+                                    <br><b>ul. Grodzieńskiej</b>
+                                </p>
+                            </div>
+                            <div class="social-media-links wrapper">
+                                <a href="https://www.facebook.com/ciastaciasteczkapracownia">
+                                    <div class="icon-wrapper">
+                                        <img class="icon" src="{% static 'ciasta_ciasteczka/icons/facebook.svg' %}"
+                                            alt="" height="64px" />
+                                    </div>
+                                </a>
+                                <a href="https://www.instagram.com/ciastaciasteczkapracownia">
+                                    <div class="icon-wrapper">
+                                        <img class="icon" src="{% static 'ciasta_ciasteczka/icons/instagram.svg' %}"
+                                            alt="" height="64px" />
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="column">
+                        <div class="resp-iframe-wrapper">
+                            <iframe class="resp-iframe"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d738.3327324675372!2d23.15160418695224!3d53.15377734686091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ffc4779f19bb7%3A0xd01d632dd02233b4!2sKowie%C5%84ska%204%2C%2015-107%20Bia%C5%82ystok!5e1!3m2!1spl!2spl!4v1595938857561!5m2!1spl!2spl"
+                                width="500" height="500" frameborder="0" style="border: 0;" allowfullscreen=""
+                                aria-hidden="false" tabindex="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+{% endblock main-content %}

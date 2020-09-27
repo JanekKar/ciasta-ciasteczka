@@ -1,0 +1,13 @@
+{% load static %}
+<div class="news">
+    <h1>Nowości</h1>
+    <ul>
+        {% for product in new_products %}
+        <li>
+            {% include "ciasta_ciasteczka/components/product_card.html" %}
+        </li>
+        {% empty %}
+        <h1 class="no-products">No products found in database!!</h1>
+        {% endfor %}
+    </ul>
+</div>

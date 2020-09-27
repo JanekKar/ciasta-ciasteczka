@@ -1,0 +1,40 @@
+{% extends 'ciasta_ciasteczka/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Menu
+{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/menu.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/product_card.css' %} ">
+{% endblock styles %}
+
+{% block scripts%}
+<script src="{% static 'ciasta_ciasteczka/scripts/menu.js' %}"></script>
+{% endblock scripts%}
+
+{% block main-content %}
+<div class="main-content-wrapper">
+    <div class="category">
+        <div class="category-banner image-wrapper">
+            {% if background_image %}
+            <img src=" {{background_image.image.url}}" alt="{{background_image.alt_text}}" />
+            {% else %}
+            <img src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %}" alt="Ciasta ciasteczka logo" />
+            {% endif %}
+        </div>
+        <div class="category-info">
+            <h2>{{category.name}}</h2>
+            <p>{{category.description}}</p>
+        </div>
+    </div>
+    <div class="products-container grid">
+        {% for product in products %}
+        {% include 'ciasta_ciasteczka/components/product_card.html' %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock main-content %}

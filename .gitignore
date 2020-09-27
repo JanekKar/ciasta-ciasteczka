@@ -127,3 +127,26 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# DB data
+db
+db/*
+
+media
+media/*
+
+.env.prod*
+
+*_volume
+
+notes
+TODO
+
+.vscode
+.vscode/*
+
+kategorie.save
+change_characterset_script
+
+

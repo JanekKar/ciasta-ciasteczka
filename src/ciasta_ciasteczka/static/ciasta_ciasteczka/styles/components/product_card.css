@@ -1,0 +1,91 @@
+:root {
+    --product-card-width: 240px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.product-card {
+    width: 100%;
+    display: block;
+
+    background-color: whitesmoke;
+
+    border-radius: 5px;
+
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), -3px -3px 3px rgba(0, 0, 0, 0.2), -3px 3px 3px rgba(0, 0, 0, 0.2), 3px -3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover {
+    scale: 1.03;
+}
+
+
+.product-card .product-info {
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    padding: 10px;
+
+    position: relative;
+}
+
+.product-card .product-info h3 {
+    color: var(--main-bg-darker-primary);
+    text-align: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    min-height: 2.8rem;
+}
+
+.product-card .price-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 2rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.product-card .price-container .horizontal-line {
+    background: var(--section-darker-background);
+    height: 2px;
+    padding: 0;
+    margin: 0;
+
+    width: 20%;
+}
+
+.product-card .product-info h4 {
+    color: var(--main-bg-accent);
+}
+
+.product-card .product-image {
+    width: 100%;
+    padding-top: 100%;
+    /* 1:1 Aspect Ratio */
+    position: relative;
+    /* If you want text inside of it */
+    display: block;
+    border-radius: 5px;
+    background-color: var(--main-bg-primary);
+}
+
+.product-card .product-image img {
+    border-radius: 5px 5px 0px 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}

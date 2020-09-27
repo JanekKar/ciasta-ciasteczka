@@ -1,0 +1,136 @@
+.main-content-wrapper {
+    max-width: 1024px;
+    margin: auto;
+    background-color: var(--section-background);
+    height: 100%;
+    box-shadow: 0 7px 7px 5px gray;
+}
+
+.grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vw;
+    padding: 15px;
+
+    padding-top: 5vh;
+}
+
+.grid-cell,
+.gallery {
+    width: 100%;
+}
+
+.product-info .name {
+    color: var(--chocolate);
+    font-size: 2.2rem;
+    padding: 2% 0;
+
+}
+
+.product-info .description {
+    font-size: 1.2rem;
+}
+
+
+.size-container {
+    display: flex;
+    flex-direction: row;
+    padding: 2% 0;
+}
+
+.size {
+    border: 1px groove var(--chocolate);
+    padding: 5px;
+    margin-right: 10px;
+
+    width: 30%;
+
+    background-color: var(--section-darker-background);
+    border-radius: 10px;
+
+    cursor: default;
+}
+
+.size h4 {
+    color: var(--chocolate);
+}
+
+
+.collapsible-toggle {
+    cursor: pointer;
+    height: 1.7rem;
+}
+
+.collapsible {
+    display: block;
+    max-height: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+
+    margin: 0;
+
+    text-align: start;
+    font-size: 1rem;
+    color: var(--chocolate);
+    transition: max-height .5s ease-in-out;
+
+    background-color: var(--section-darker-background);
+}
+
+.collapsible.active {
+    max-height: 2000px;
+    height: auto;
+    padding: 1% 4%;
+
+    transition: max-height .5s ease-in-out;
+}
+
+.collapsible-toggle {
+    display: block;
+    color: var(--chocolate);
+    font-size: 1.4 rem;
+    height: auto;
+    padding: .5% 30%;
+    border-bottom: 2px var(--section-darker-background) solid;
+}
+
+.collapsible-toggle h3 {
+    width: auto;
+    margin: auto;
+    text-align: center;
+}
+
+.collapsible-toggle:hover h3 {
+    scale: 1.1;
+}
+
+
+.news {
+    background-color: var(--section-background) !important;
+}
+
+
+.arrow {
+    display: block;
+    height: 1.2rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .grid {
+        display: block;
+        padding-top: 10vh;
+    }
+
+    .size-container {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .size {
+        width: 45%;
+        margin-top: 10px;
+    }
+}

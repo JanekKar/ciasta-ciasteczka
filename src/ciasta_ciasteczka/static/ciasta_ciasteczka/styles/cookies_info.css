@@ -1,0 +1,40 @@
+.cookie-info ul {
+    list-style: upper-roman;
+    list-style-position: inside;
+    font-size: 1.2rem;
+}
+
+.cookie-info ul>li {
+    padding-bottom: 2%;
+}
+
+.cookie-info ol {
+    padding: 2% 0 0 3%;
+    font-size: 1rem;
+    list-style-position: outside;
+}
+
+.cookie-info ol>li {
+    padding-bottom: 5px;
+}
+
+.cookie-info ol>li>ol {
+    padding: 0 0 0 3%;
+    font-size: 1rem;
+    list-style-position: outside;
+    list-style: lower-alpha;
+}
+
+.cookie-info {
+    max-width: 1024px;
+    margin: auto;
+    padding: 4vh 2vh;
+    background-color: whitesmoke;
+    box-shadow: 0 7px 7px 5px gray;
+
+}
+
+
+main {
+    background-color: var(--section-darker-background);
+}

@@ -1,0 +1,86 @@
+{% extends 'ciasta_ciasteczka/base.html' %}
+{% load static %}
+
+{% block title %}
+{{product.name.capitalize}}
+{% endblock title %}
+
+{% block styles %}
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/product.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/new_products.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/product_card.css' %} ">
+<link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/product_gallery.css' %} ">
+{% endblock styles %}
+
+{% block scripts%}
+<script src="{% static 'ciasta_ciasteczka/scripts/product_gallery.js' %}"></script>
+<script src="{% static 'ciasta_ciasteczka/scripts/product.js' %}"></script>
+{% endblock scripts%}
+
+{% block main-content %}
+<div class="main-content-wrapper">
+    <div class="grid">
+        {% include "ciasta_ciasteczka/components/product_gallery.html" %}
+        <div class="product-info grid-cell">
+            <h1 class="name">{{product.name.capitalize}}</h1>
+            <p class="description">{{ product.description }}</p>
+            {% if sizes %}
+            <div class="size-container">
+                {% for size_information in sizes %}
+                <div class="size">
+                    <h3>{{size_information.price}} {{product.product_type.price_unit}}</h3>
+                    <h4>{{size_information.size.name}}</h4>
+                    <h5>Ilość osób: {{size_information.size.tray.min_amount_of_people}} -
+                        {{size_information.size.tray.max_amount_of_people}}
+                    </h5>
+                    {% if size_information.size.tray is not None%}
+                    <div class="tray-info">
+                        <h6>
+                            {% if size_information.size.tray.diameter %}
+                            Średnica: {{size_information.size.tray.diameter}} cm
+                            {% elif size_information.size.tray.width and size_information.size.tray.length %}
+                            Wymiary: {{size_information.size.tray.width}} X {{size_information.size.tray.length}} cm
+                            {% endif %}
+                        </h6>
+                    </div>
+                    {%endif%}
+                </div>
+                {% empty %}
+                <div class="size">
+                    <h3>No size info</h3>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif%}
+        </div>
+    </div>
+
+    <div class="information">
+        {% if product.ingredients.all %}
+        <div class="ingredients">
+            <span class="collapsible-toggle" onClick="open_collapsible_1()">
+                <h3>Składniki<img class="arrow" src="{% static 'ciasta_ciasteczka/icons/chevron-down.svg' %}" alt="">
+                </h3>
+            </span>
+            <p class=" collapsible col_1">
+            {{product.ingredients.all|join:", "|capfirst}}.
+            </p>
+        </div>
+        {% endif %}
+        {% if product.get_allergens%}
+        <div class="allergens">
+            <span class="collapsible-toggle" onClick="open_collapsible_2()">
+                <h3>Alergeny<img class="arrow" src="{% static 'ciasta_ciasteczka/icons/chevron-down.svg' %}" alt="">
+                </h3>
+            </span>
+            <p class="collapsible col_2">
+            {{product.get_allergens|join:", "|capfirst}}.
+            </p>
+        </div>
+        {% endif %}
+    </div>
+    {% include "ciasta_ciasteczka/components/new_products.html" %}
+
+</div>
+
+{% endblock main-content %}

@@ -1,0 +1,11 @@
+<div class="cookie-bar">
+    <p>Strona używa plików cookies: <a href="{% url 'ciasta_ciasteczka:cookies_info' %}"> więcej informacji</a> </p>
+    <span class="button" onclick="close_bar()">OK</span>
+</div>
+
+<script>
+    function close_bar() {
+        document.querySelector('.cookie-bar').classList.add('closed');
+        document.querySelector('footer').classList.remove('shifted');
+    }
+</script>

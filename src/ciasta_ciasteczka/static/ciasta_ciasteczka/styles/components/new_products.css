@@ -1,0 +1,42 @@
+.news {
+    display: block;
+    padding: 1vh 0 2vh 0;
+    flex-wrap: wrap;
+    background-color: var(--section-darker-background);
+    height: 100%;
+}
+
+.news .no-products {
+    grid-column: col-start -1 / -1;
+    padding: 0;
+    text-align: center;
+}
+
+.news h1 {
+    display: block;
+    text-align: center;
+    color: var(--chocolate);
+    padding: 1% 5% 2% 5%;
+
+}
+
+.news ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: stretch;
+    gap: 15px;
+
+    list-style: none;
+
+    width: 100%;
+
+    padding: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .news ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+}

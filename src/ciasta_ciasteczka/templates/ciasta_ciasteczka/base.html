@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jan Karaszewski">
+    <meta name="description" content="Ciasta, ciasteckza, torty i inne słodkości wykonywane na zamówienie.">
+
+    <meta property="og:url" content="https://ciastaciasteczka.pl">
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ciasta, Ciasteczka" />
+    <meta property="og:description" content="Ciasta, ciasteckza, torty i inne słodkości wykonywane na zamówienie." />
+    <meta property="og:image" content="{% static 'ciasta_ciasteczka/assets/logo/logo.png' %}" />
+
+    <meta http-equiv="X-Ua-Compatible" content="IE=edge,chrome=1" />
+
+    <link rel="canonical" href="https://ciastaciasteczka.pl" />
+
+    <title>{% block title %}{% endblock title %} | Ciasta, Ciasteczka</title>
+
+    <link rel="apple-touch-icon" sizes="57x57"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{% static 'ciasta_ciasteczka/assets/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'ciasta_ciasteczka/assets/favicon/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'ciasta_ciasteczka/assets/favicon/ms-icon-144x144.png'%}">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" />
+    <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/base.css' %} " />
+    <link rel="stylesheet" href=" {% static 'ciasta_ciasteczka/styles/components/cookie_bar.css' %} " />
+    {% block styles %}
+    {% endblock styles %}
+
+
+</head>
+
+<body>
+    {%include 'ciasta_ciasteczka/components/cookie_bar.html'%}
+    <div class="spinner-wrapper">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div id="top"></div>
+    <nav>
+        <div class="logo-container">
+            <a class="logo" href="/#top">
+                <img class="logo-img" src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %}"
+                    alt="Ciasta ciasteczka logo" /></a>
+        </div>
+        <div class="burger">
+            <div class="line0"></div>
+            <div class="line1"></div>
+            <div class="line2"></div>
+        </div>
+        <ul class="nav-links">
+            <li class="sub-menu-toggle" onmouseover="openMenu()" onmouseout="closeMenu()">
+                <a>menu</a>
+                <div class="sub-menu">
+                    <ul>
+                        {% for category, sub_categories in categories.items %}
+                        <li class="category-container">
+                            <h2>{{category.capitalize}}</h2>
+                            <ul>
+                                {% for sub_category in sub_categories%}
+                                {% if sub_category.has_active_products %}
+                                <li class="link-btn">
+                                    <a
+                                        href="{% url 'ciasta_ciasteczka:category_details' sub_category.slug %}"><span>{{sub_category.name.capitalize}}</span></a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% empty %}
+                        <h1>No products found in database!!</h1>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+
+            <li onClick="closeNav()" class="section-btn">
+                <a href="{% url 'ciasta_ciasteczka:index' %}#how-to-order"><span>jak zamówić?</span></a>
+            </li>
+            <li onClick="closeNav()" class="section-btn">
+                <a href="{% url 'ciasta_ciasteczka:index' %}#about"><span>o mnie</span></a>
+            </li>
+            <li onClick="closeNav()" class="section-btn">
+                <a href="{% url 'ciasta_ciasteczka:index' %}#contact"><span>kontakt</span></a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        {% block main-content %}
+        {% endblock main-content %}
+    </main>
+    <footer class='shifted'>
+        <div class="social-media-wrapper">
+            <div class="social-media">
+                <p>Obserwuj mnie na mediach społecznościowych:</p>
+                <div class="social-media-links-container">
+                    <a href="https://www.facebook.com/ciastaciasteczkapracownia">
+                        <div class="icon-wrapper">
+                            <img class="icon" src="{% static 'ciasta_ciasteczka/icons/facebook.svg' %}" alt=""
+                                height="64px" />
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/ciastaciasteczkapracownia">
+                        <div class="icon-wrapper">
+                            <img class="icon" src="{% static 'ciasta_ciasteczka/icons/instagram.svg' %}" alt=""
+                                height="64px" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="columns-container">
+            {% comment %} <div class="column-wrapper">
+                <div class="column" id="information">
+                    <h2>Informacje</h2>
+                    <p>Ciasta ciasteczka, to mała firma wykonująca wypieki na zamówienie.</p>
+                </div>
+            </div> {% endcomment %}
+            {% comment %} <div class="vertical-line"></div> {% endcomment %}
+            <div class="column-wrapper id=" contact"">
+                <div class="column">
+
+                    <h2>Kontakt</h2>
+                    <div class="phone-wrapper">
+                        <div class="icon-wrapper">
+                            <img class="icon" src="{% static 'ciasta_ciasteczka/icons/phone.svg' %}" alt=""
+                                height="64px" width="64px" />
+                        </div>
+                        <a href="tel:503-178-197">503-178-197</a>
+                    </div>
+                    <div class="address-wrapper">
+                        <div class="icon-wrapper">
+                            <img class="icon" src="{% static 'ciasta_ciasteczka/icons/home.svg' %}" alt="" height="64px"
+                                width="64px" />
+                        </div>
+                        <p>
+                            ul. Kowieńska 4<br>Białystok<br>Wejście od strony ulicy <br><b>Grodzieńskiej</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-container">
+                <a class="logo" href="/#top">
+                    <img class="logo-img" src=" {% static 'ciasta_ciasteczka/assets/logo/logo.png' %}"
+                        alt="Ciasta ciasteczka logo" /></a>
+            </div>
+            <div class="column-wrapper">
+                <div class="column">
+                    <h2>Nawigacja</h2>
+                    <div class="links-container">
+                        <a href="{% url 'ciasta_ciasteczka:index' %}"><span>Strona Głowna</span></a>
+                        {% comment %} <a href="#placeholder"><span>Menu</span></a> {% endcomment %}
+                        <a href="{% url 'ciasta_ciasteczka:index' %}#how-to-order"><span>Jak zamawiać?</span></a>
+                        <a href="{% url 'ciasta_ciasteczka:index' %}#about"><span>O mnie</span></a>
+                        <a href="{% url 'ciasta_ciasteczka:index' %}#contact"><span>Kontakt</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <span>&copy; Copyright {{ year }}, Ciasta Ciasteczka</span>
+            <span>Created by Jan Karaszewski</span>
+        </div>
+    </footer>
+</body>
+<script src=" {% static 'ciasta_ciasteczka/scripts/base.js' %} "></script>
+{% block scripts %}
+{% endblock scripts %}
+
+</html>
