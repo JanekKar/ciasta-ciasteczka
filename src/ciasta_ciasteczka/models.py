@@ -64,6 +64,18 @@ class ProductType(models.Model):
         return self.name
 
 
+class Ingredient(models.Model):
+    class Meta:
+        verbose_name = _("ingredient")
+        verbose_name_plural = _("ingredients")
+
+    name = models.CharField(_("name"), max_length=50, blank=False, null=False)
+    allergen = models.BooleanField(_("allergen"), default=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+
 class Category(models.Model):
 
     class Meta:
@@ -111,10 +123,6 @@ class Product(models.Model):
 
     name = models.CharField(verbose_name=_("name"), max_length=60)
     description = models.TextField(verbose_name=_("description"),)
-    ingredients = models.TextField(verbose_name=_(
-        "ingredients"), blank=True, null=True)
-    allergens = models.TextField(verbose_name=_(
-        "allergens"), blank=True, null=True)
     hidden = models.BooleanField(verbose_name=_("hidden"), default=False)
     creation_date = models.DateTimeField(
         verbose_name=_("creation date"), auto_now_add=True)
@@ -122,6 +130,9 @@ class Product(models.Model):
     product_type = models.ForeignKey(ProductType, verbose_name=_(
         "type"), on_delete=models.CASCADE, default=None, blank=False)
     category = models.ManyToManyField(Category, verbose_name=_("category"),)
+
+    ingredients = models.ManyToManyField(Ingredient, verbose_name=_(
+        "ingredients"), blank=True)
 
     def __str__(self):
         return self.name
@@ -138,6 +149,12 @@ class Product(models.Model):
         return len(Category.objects.filter(product=self,))
     number_of_categories.short_description = _(
         "number of categories").capitalize()
+
+    def has_allergens(self):
+        return self.ingredients.all().filter(allergen=True).exists()
+
+    def get_allergens(self):
+        return self.ingredients.all().filter(allergen=True)
 
     def get_main_pic(self):
         picture = ProductPhoto.objects.get(product=self, main=True)

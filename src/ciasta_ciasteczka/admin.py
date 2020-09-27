@@ -47,12 +47,18 @@ class TrayAdmin(admin.ModelAdmin):
     get_length.short_description = _('length')
 
 
+class IngredientAdmin(admin.ModelAdmin):
+    list_display = ['name', 'allergen']
+    actions = [mark_as_allergen, mark_as_notallergen]
+
+
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'hidden', 'product_type',
                     'number_of_photos', 'number_of_categories']
     inlines = [ProductPhotoInline, SizeProductPriceInline]
     actions = [hide_products, show_products]
     list_filter = ['hidden', 'category', 'product_type__name']
+    filter_horizontal = ('ingredients', 'category')
     search_fields = ['name']
 
     ordering = ['hidden', 'name']
@@ -89,6 +95,7 @@ admin.site.register(Size)
 admin.site.register(Tray, TrayAdmin)
 admin.site.register(ProductType)
 admin.site.register(SlideshowPhoto, SlideshowPhotoAdmin)
+admin.site.register(Ingredient, IngredientAdmin)
 
 
 # Register your models here.

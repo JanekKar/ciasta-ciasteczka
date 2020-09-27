@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-26 11:40+0000\n"
+"POT-Creation-Date: 2020-09-27 17:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Jan Karaszewski <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,8 +36,16 @@ msgstr "ukryj wszystkie produkty w zaznaczoneych kategoriach"
 msgid "show all products in selected categories"
 msgstr "pokaż wszystkie produkty w zaznaczoneych kategoriach"
 
+#: ciasta_ciasteczka/actions.py:43
+msgid "mark as allergen"
+msgstr "zaznacz jako alergney"
+
+#: ciasta_ciasteczka/actions.py:50
+msgid "mark as safe"
+msgstr "zaznacz jako bezpieczne"
+
 #: ciasta_ciasteczka/admin.py:32 ciasta_ciasteczka/admin.py:39
-#: ciasta_ciasteczka/admin.py:46 ciasta_ciasteczka/models.py:276
+#: ciasta_ciasteczka/admin.py:46 ciasta_ciasteczka/models.py:293
 msgid "no data"
 msgstr "brak danych"
 
@@ -53,15 +61,15 @@ msgstr "szerokość"
 msgid "length"
 msgstr "długość"
 
-#: ciasta_ciasteczka/admin.py:72 ciasta_ciasteczka/admin.py:78
+#: ciasta_ciasteczka/admin.py:79 ciasta_ciasteczka/admin.py:85
 msgid "none"
 msgstr "brak"
 
-#: ciasta_ciasteczka/admin.py:73 ciasta_ciasteczka/models.py:77
+#: ciasta_ciasteczka/admin.py:80 ciasta_ciasteczka/models.py:89
 msgid "parent category"
 msgstr "kategoria nadrzędna"
 
-#: ciasta_ciasteczka/admin.py:83
+#: ciasta_ciasteczka/admin.py:90
 msgid "number of active products"
 msgstr "ilość widoczynch produktów"
 
@@ -74,8 +82,8 @@ msgid "trays"
 msgstr "blachy"
 
 #: ciasta_ciasteczka/models.py:18 ciasta_ciasteczka/models.py:45
-#: ciasta_ciasteczka/models.py:60 ciasta_ciasteczka/models.py:73
-#: ciasta_ciasteczka/models.py:112
+#: ciasta_ciasteczka/models.py:60 ciasta_ciasteczka/models.py:72
+#: ciasta_ciasteczka/models.py:85 ciasta_ciasteczka/models.py:124
 msgid "name"
 msgstr "nazwa"
 
@@ -91,7 +99,7 @@ msgstr "maxymalna ilość osób"
 msgid "amount of people"
 msgstr "ilość osób"
 
-#: ciasta_ciasteczka/models.py:42 ciasta_ciasteczka/models.py:165
+#: ciasta_ciasteczka/models.py:42 ciasta_ciasteczka/models.py:182
 msgid "size"
 msgstr "rozamiar"
 
@@ -115,108 +123,112 @@ msgstr "typy produktów"
 msgid "price unit"
 msgstr "jednostka ceny"
 
-#: ciasta_ciasteczka/models.py:70 ciasta_ciasteczka/models.py:124
-msgid "category"
-msgstr "kategoria"
+#: ciasta_ciasteczka/models.py:69
+msgid "ingredient"
+msgstr "składnik"
 
-#: ciasta_ciasteczka/models.py:71
-msgid "categories"
-msgstr "kategorie"
-
-#: ciasta_ciasteczka/models.py:75 ciasta_ciasteczka/models.py:113
-msgid "description"
-msgstr "opis"
-
-#: ciasta_ciasteczka/models.py:78
-msgid "slug"
-msgstr "slug"
-
-#: ciasta_ciasteczka/models.py:103
-msgid "visible"
-msgstr "widoczna"
-
-#: ciasta_ciasteczka/models.py:109 ciasta_ciasteczka/models.py:167
-#: ciasta_ciasteczka/models.py:182
-msgid "product"
-msgstr "produkt"
-
-#: ciasta_ciasteczka/models.py:110
-msgid "products"
-msgstr "produkty"
-
-#: ciasta_ciasteczka/models.py:115
+#: ciasta_ciasteczka/models.py:70 ciasta_ciasteczka/models.py:135
 msgid "ingredients"
 msgstr "składniki"
 
-#: ciasta_ciasteczka/models.py:117
-msgid "allergens"
-msgstr "alergeny"
+#: ciasta_ciasteczka/models.py:73
+msgid "allergen"
+msgstr "alergen"
 
-#: ciasta_ciasteczka/models.py:118 ciasta_ciasteczka/models.py:254
+#: ciasta_ciasteczka/models.py:82 ciasta_ciasteczka/models.py:132
+msgid "category"
+msgstr "kategoria"
+
+#: ciasta_ciasteczka/models.py:83
+msgid "categories"
+msgstr "kategorie"
+
+#: ciasta_ciasteczka/models.py:87 ciasta_ciasteczka/models.py:125
+msgid "description"
+msgstr "opis"
+
+#: ciasta_ciasteczka/models.py:90
+msgid "slug"
+msgstr "slug"
+
+#: ciasta_ciasteczka/models.py:115
+msgid "visible"
+msgstr "widoczna"
+
+#: ciasta_ciasteczka/models.py:121 ciasta_ciasteczka/models.py:184
+#: ciasta_ciasteczka/models.py:199
+msgid "product"
+msgstr "produkt"
+
+#: ciasta_ciasteczka/models.py:122
+msgid "products"
+msgstr "produkty"
+
+#: ciasta_ciasteczka/models.py:126 ciasta_ciasteczka/models.py:271
 msgid "hidden"
 msgstr "ukryty"
 
-#: ciasta_ciasteczka/models.py:120
+#: ciasta_ciasteczka/models.py:128
 msgid "creation date"
 msgstr "data utworzenia"
 
-#: ciasta_ciasteczka/models.py:123
+#: ciasta_ciasteczka/models.py:131
 msgid "type"
 msgstr "typ"
 
-#: ciasta_ciasteczka/models.py:135
+#: ciasta_ciasteczka/models.py:146
 msgid "number of photos"
 msgstr "ilość zdjęć"
 
-#: ciasta_ciasteczka/models.py:140
+#: ciasta_ciasteczka/models.py:151
 msgid "number of categories"
 msgstr "ilość kategori"
 
-#: ciasta_ciasteczka/models.py:161
+#: ciasta_ciasteczka/models.py:178
 msgid "size and price of product"
 msgstr "rozmiar i cena produkty"
 
-#: ciasta_ciasteczka/models.py:162
+#: ciasta_ciasteczka/models.py:179
 msgid "sizes and prices of products"
 msgstr "rozmiary i ceny produktów"
 
-#: ciasta_ciasteczka/models.py:169
+#: ciasta_ciasteczka/models.py:186
 msgid "price"
 msgstr "cena"
 
-#: ciasta_ciasteczka/models.py:178
+#: ciasta_ciasteczka/models.py:195
 msgid "product photo"
 msgstr "zdjęcie produktu"
 
-#: ciasta_ciasteczka/models.py:179
+#: ciasta_ciasteczka/models.py:196
 msgid "product photos"
 msgstr "zdjęcia produktu"
 
-#: ciasta_ciasteczka/models.py:184 ciasta_ciasteczka/models.py:253
+#: ciasta_ciasteczka/models.py:201 ciasta_ciasteczka/models.py:270
 msgid "alternative text"
 msgstr "tekst alternatywny"
 
-#: ciasta_ciasteczka/models.py:185 ciasta_ciasteczka/models.py:259
+#: ciasta_ciasteczka/models.py:202 ciasta_ciasteczka/models.py:276
 msgid "image"
 msgstr "zdjęcie"
 
-#: ciasta_ciasteczka/models.py:187
+#: ciasta_ciasteczka/models.py:204
 msgid "main photo"
 msgstr "zdjęcie główne"
 
-#: ciasta_ciasteczka/models.py:192
+#: ciasta_ciasteczka/models.py:209
 msgid "product image"
 msgstr "zdjęcie produktu"
 
-#: ciasta_ciasteczka/models.py:246
+#: ciasta_ciasteczka/models.py:263
 msgid "slideshow photot"
 msgstr "zdjęcie do pokazu slajdów"
 
-#: ciasta_ciasteczka/models.py:247
+#: ciasta_ciasteczka/models.py:264
 msgid "slideshow photos"
 msgstr "zdjęcia do pokazu slajdów"
 
-#: ciasta_ciasteczka/models.py:250
+#: ciasta_ciasteczka/models.py:267
 msgid "text"
 msgstr "tekst"
 

@@ -56,25 +56,25 @@
     </div>
 
     <div class="information">
-        {% if product.ingredients %}
+        {% if product.ingredients.all %}
         <div class="ingredients">
             <span class="collapsible-toggle" onClick="open_collapsible_1()">
                 <h3>Składniki<img class="arrow" src="{% static 'ciasta_ciasteczka/icons/chevron-down.svg' %}" alt="">
                 </h3>
             </span>
             <p class=" collapsible col_1">
-                {{ product.ingredients }}
+            {{product.ingredients.all|join:", "|capfirst}}.
             </p>
         </div>
         {% endif %}
-        {% if product.allergens %}
+        {% if product.get_allergens%}
         <div class="allergens">
             <span class="collapsible-toggle" onClick="open_collapsible_2()">
                 <h3>Alergeny<img class="arrow" src="{% static 'ciasta_ciasteczka/icons/chevron-down.svg' %}" alt="">
                 </h3>
             </span>
             <p class="collapsible col_2">
-                {{ product.allergens }}
+            {{product.get_allergens|join:", "|capfirst}}.
             </p>
         </div>
         {% endif %}

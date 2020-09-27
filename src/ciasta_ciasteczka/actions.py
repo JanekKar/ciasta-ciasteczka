@@ -34,3 +34,17 @@ def show_all_products(modeladmin, request, queryset):
 
 show_all_products.short_description = _(
     "show all products in selected categories").capitalize()
+
+
+def mark_as_allergen(momodeladmin, request, queryset):
+    queryset.update(allergen=True)
+
+
+mark_as_allergen.short_description = _("mark as allergen").capitalize()
+
+
+def mark_as_notallergen(momodeladmin, request, queryset):
+    queryset.update(allergen=False)
+
+
+mark_as_notallergen.short_description = _("mark as safe").capitalize()
