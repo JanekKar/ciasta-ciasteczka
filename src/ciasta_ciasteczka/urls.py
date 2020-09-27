@@ -26,12 +26,17 @@ sitemaps = {
 
 urlpatterns = [
     path('', views.index, name="index"),
-    path('kategorie/<str:category_slug>', views.category, name="category"),
+
+    path('kategorie/<str:category_slug>',
+         views.category_details, name="category_details"),
+
     path('produkt/<int:product_id>', views.product_details, name="product_details"),
-    path('ciasteczka/', views.cookies, name="cookies"),
-    path('404/', views.handler404_test, name='404'),
+
+    path('ciasteczka/', views.cookies_info, name="cookies_info"),
+
     path("robots.txt", TemplateView.as_view(
         template_name="ciasta_ciasteczka/robots.txt", content_type="text/plain")),
+
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap')
 ]

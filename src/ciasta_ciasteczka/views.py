@@ -43,7 +43,7 @@ def index(request):
     return HttpResponse(template.render(context))
 
 
-def category(request, category_slug):
+def category_details(request, category_slug):
     def get_products(category):
         all_products = []
         if category.is_parent():
@@ -70,7 +70,7 @@ def category(request, category_slug):
         else:
             return None
 
-    template_name = 'ciasta_ciasteczka/category.html'
+    template_name = 'ciasta_ciasteczka/category_details.html'
     template = loader.get_template(template_name)
     category = get_category()
     context = {
@@ -84,7 +84,7 @@ def category(request, category_slug):
 
 
 def product_details(request, product_id):
-    template_name = 'ciasta_ciasteczka/product.html'
+    template_name = 'ciasta_ciasteczka/product_details.html'
     template = loader.get_template(template_name)
     context = {
         'product': get_object_or_404(Product, id=product_id, hidden=False),
@@ -96,23 +96,14 @@ def product_details(request, product_id):
     return HttpResponse(template.render(context))
 
 
-def cookies(request):
-    template_name = 'ciasta_ciasteczka/cookies.html'
+def cookies_info(request):
+    template_name = 'ciasta_ciasteczka/cookies_info.html'
     template = loader.get_template(template_name)
     context = {
         "": "",
     }
     context.update(get_default_context())
     return HttpResponse(template.render(context))
-
-
-def handler404_test(request):
-    context = get_default_context()
-    context.update({'error_500': True,
-                    'message': _("Sorry, something went wrong."),
-                    'button_value': _('Come back to main page')})
-    return render(request, 'error_page.html',
-                  context=context)
 
 
 def handler400(request, exception):
