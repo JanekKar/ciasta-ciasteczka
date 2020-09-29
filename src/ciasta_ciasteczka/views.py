@@ -28,7 +28,7 @@ def get_default_context():
     return {
         "year": timezone.now().year,
         'categories': categories,
-        'new_products': Product.objects.all().order_by('-creation_date')[:4],
+        'new_products': Product.objects.filter(hidden=False).order_by('-creation_date')[:4],
     }
 
 
