@@ -49,7 +49,8 @@ def category_details(request, category_slug):
         if category.is_parent():
             sub_categories = Category.objects.filter(parent=category)
             for sub_category in sub_categories:
-                products = Product.objects.filter(category=sub_category)
+                products = Product.objects.filter(
+                    category=sub_category, hidden=False)
                 all_products += products
             all_products = set(all_products)
         else:
