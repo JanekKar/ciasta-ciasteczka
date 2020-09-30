@@ -48,3 +48,19 @@ def mark_as_notallergen(momodeladmin, request, queryset):
 
 
 mark_as_notallergen.short_description = _("mark as safe").capitalize()
+
+
+def hide_accessories(modeladmin, request, queryset):
+    queryset.update(hidden="True")
+
+
+hide_accessories.short_description = _(
+    'hide selected accessories').capitalize()
+
+
+def show_accessories(modeladmin, request, queryset):
+    queryset.update(hidden="False")
+
+
+show_accessories.short_description = _(
+    'show selected accessories').capitalize()

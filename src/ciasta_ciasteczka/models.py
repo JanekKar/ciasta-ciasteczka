@@ -48,6 +48,11 @@ class Size(models.Model):
         "tray"), blank=True, null=True, on_delete=models.CASCADE, default=None)
 
     def __str__(self):
+        if self.tray:
+            if self.tray.diameter:
+                return "{} - {} {}cm".format(self.name, self.tray.name, self.tray.diameter)
+            elif self.tray.length and self.tray.width:
+                return "{} - {} {}x{}cm".format(self.name, self.tray.name, self.tray.width, self.tray.length)
         return self.name
 
 
@@ -68,6 +73,7 @@ class Ingredient(models.Model):
     class Meta:
         verbose_name = _("ingredient")
         verbose_name_plural = _("ingredients")
+        ordering = ['name']
 
     name = models.CharField(_("name"), max_length=50, blank=False, null=False)
     allergen = models.BooleanField(_("allergen"), default=False, blank=False)
@@ -81,6 +87,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = _("category")
         verbose_name_plural = _("categories")
+        ordering = ['name']
 
     name = models.CharField(verbose_name=_("name"), unique=True, max_length=50)
     description = models.TextField(verbose_name=_(
@@ -225,7 +232,7 @@ class ProductPhoto(models.Model):
         return self.alt_text
 
 
-@receiver(models.signals.post_delete, sender=ProductPhoto)
+@ receiver(models.signals.post_delete, sender=ProductPhoto)
 def auto_delete_file_on_delete(sender, instance, **kwargs):
     """
     Deletes file from filesystem
@@ -236,7 +243,7 @@ def auto_delete_file_on_delete(sender, instance, **kwargs):
             os.remove(instance.photo.path)
 
 
-@receiver(models.signals.pre_save, sender=ProductPhoto)
+@ receiver(models.signals.pre_save, sender=ProductPhoto)
 def auto_delete_file_on_change(sender, instance, **kwargs):
     """
     Deletes old file from filesystem
@@ -291,3 +298,19 @@ class SlideshowPhoto(models.Model):
             return self.alt_text
         else:
             return _("no data")
+
+
+class Accessory(models.Model):
+    class Meta:
+        verbose_name = _("accessory")
+        verbose_name_plural = _("accessories")
+        ordering = ['name']
+
+    name = models.CharField(_("name"), max_length=50, null=False, blank=False)
+    price = models.DecimalField(
+        _("price"), max_digits=4, decimal_places=2, null=False, blank=False)
+    hidden = models.BooleanField(
+        _("hidden"), default=False, null=False, blank=False)
+
+    def __str__(self):
+        return self.name

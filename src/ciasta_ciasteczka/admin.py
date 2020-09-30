@@ -61,7 +61,7 @@ class ProductAdmin(admin.ModelAdmin):
     filter_horizontal = ('ingredients', 'category')
     search_fields = ['name']
 
-    ordering = ['hidden', 'name']
+    ordering = ['name']
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -89,6 +89,14 @@ class CategoryAdmin(admin.ModelAdmin):
         "number of active products")
 
 
+class AccessoryAdmin(admin.ModelAdmin):
+    list_display = ['name', 'hidden', 'get_price']
+    actions = [hide_accessories, show_accessories]
+
+    def get_price(self, obj):
+        return str(obj.price) + "zł"
+
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Size)
@@ -96,6 +104,7 @@ admin.site.register(Tray, TrayAdmin)
 admin.site.register(ProductType)
 admin.site.register(SlideshowPhoto, SlideshowPhotoAdmin)
 admin.site.register(Ingredient, IngredientAdmin)
+admin.site.register(Accessory, AccessoryAdmin)
 
 
 # Register your models here.

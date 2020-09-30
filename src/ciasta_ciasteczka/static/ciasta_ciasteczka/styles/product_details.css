@@ -28,10 +28,18 @@
 
 }
 
-.product-info .description {
-    font-size: 1.2rem;
+.product-info>h3 {
+    color: var(--chocolate);
 }
 
+.product-info .description {
+    font-size: 1.2rem;
+    padding-bottom: 5px;
+}
+
+.product-info .description li {
+    list-style-position: inside;
+}
 
 .size-container {
     display: flex;
@@ -44,7 +52,7 @@
     padding: 5px;
     margin-right: 10px;
 
-    width: 30%;
+    /* width: 22%; */
 
     background-color: var(--section-darker-background);
     border-radius: 10px;
@@ -56,6 +64,25 @@
     color: var(--chocolate);
 }
 
+.accessories h2 {
+    text-align: center;
+}
+
+.accessories ul {
+    display: block;
+    list-style: none;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+.disclaimers {
+    font-size: 1.1rem;
+}
+
+.disclaimers p {
+    padding-bottom: 5px;
+    color: black;
+}
 
 .collapsible-toggle {
     cursor: pointer;
@@ -77,6 +104,20 @@
     transition: max-height .5s ease-in-out;
 
     background-color: var(--section-darker-background);
+}
+
+.section {
+    display: block;
+    max-height: 2000px;
+    height: auto;
+    padding: 1% 4%;
+
+    margin: 0;
+
+    text-align: start;
+    font-size: 1rem;
+    color: var(--chocolate);
+    transition: max-height .5s ease-in-out;
 }
 
 .collapsible.active {
