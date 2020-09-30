@@ -11,7 +11,8 @@ import random
 
 def get_default_context():
     categories = {}
-    parent_categories = Category.objects.filter(parent=None)
+    parent_categories = Category.objects.filter(
+        parent=None).order_by('priority')
     for parent in parent_categories:
         sub_categories = Category.objects.filter(
             parent=parent).order_by('name')
