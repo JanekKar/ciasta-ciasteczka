@@ -96,6 +96,8 @@ class Category(models.Model):
     parent = models.ForeignKey("Category", verbose_name=_(
         "parent category"), on_delete=models.CASCADE, blank=True, null=True)
     slug = models.SlugField(verbose_name=_("slug"), unique=True)
+    priority = models.DecimalField(
+        _("priority"), max_digits=1, decimal_places=0, default=5)
 
     def __str__(self):
         return self.name
