@@ -13,7 +13,8 @@ def get_default_context():
     categories = {}
     parent_categories = Category.objects.filter(parent=None)
     for parent in parent_categories:
-        sub_categories = Category.objects.filter(parent=parent)
+        sub_categories = Category.objects.filter(
+            parent=parent).order_by('name')
         active_sub_categories = []
         for sub_category in sub_categories:
             if sub_category.has_active_products():
@@ -55,7 +56,7 @@ def category_details(request, category_slug):
             all_products = set(all_products)
         else:
             all_products = Product.objects.filter(
-                category=category, hidden=False)
+                category=category, hidden=False).order_by('modified')
         if len(all_products) == 0:
             raise Http404(_("Category does not exist"))
         else:
@@ -87,10 +88,13 @@ def category_details(request, category_slug):
 def product_details(request, product_id):
     template_name = 'ciasta_ciasteczka/product_details.html'
     template = loader.get_template(template_name)
+    product = get_object_or_404(Product, id=product_id, hidden=False)
     context = {
-        'product': get_object_or_404(Product, id=product_id, hidden=False),
+        'product': product,
         'product_images': ProductPhoto.objects.filter(product_id=product_id).order_by('-main'),
         'sizes': SizeProductPrice.objects.filter(product_id=product_id).order_by('price'),
+        'tort': product.product_type == ProductType.objects.get(name="Tort"),
+        'accessories': Accessory.objects.filter(hidden=False),
         "": "",
     }
     context.update(get_default_context())
