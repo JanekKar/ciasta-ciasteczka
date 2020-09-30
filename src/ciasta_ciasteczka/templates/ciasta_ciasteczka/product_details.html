@@ -29,12 +29,12 @@
             <h3>Cena obejmuje:</h3>
             <ul class="description">
                 <li>
-                    pokrycie torttu kremem (lub masą cukrową w przypadku tortu angielskiego), drobnymi ciastkami,
+                    pokrycie tortu kremem (lub masą cukrową w przypadku tortu angielskiego), drobnymi ciastkami,
                     słodyczami
                     (beziki, cukierki, polewa)
                 </li>
                 <li>
-                    jedną figurkę cukrową lub toper
+                    jedną figurkę cukrową lub nieduży topper
                 </li>
             </ul>
             {% endif %}
@@ -75,7 +75,7 @@
             <h2>Dodatki</h2>
             <ul>
                 {% for accessory in accessories %}
-                <li>{{accessory.name.title}} - {{accessory.price}} zł</li>
+                <li>{{accessory.name.capitalize}} - {{accessory.price}} zł</li>
                 {% endfor %}
             </ul>
         </div>
