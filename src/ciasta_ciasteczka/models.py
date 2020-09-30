@@ -29,6 +29,10 @@ class Tray(models.Model):
     # TODO validate if diameter or width/length are set (one or other)
 
     def __str__(self):
+        if self.diameter:
+            return "{}-{}cm".format(self.name, self.diameter)
+        elif self.width and self.length:
+            return "{}-{}x{}cm".format(self.name, self.width, self.length)
         return self.name
 
     def amount_of_people(self):
@@ -49,10 +53,7 @@ class Size(models.Model):
 
     def __str__(self):
         if self.tray:
-            if self.tray.diameter:
-                return "{} - {} {}cm".format(self.name, self.tray.name, self.tray.diameter)
-            elif self.tray.length and self.tray.width:
-                return "{} - {} {}x{}cm".format(self.name, self.tray.name, self.tray.width, self.tray.length)
+            return "{} - {}".format(self.name, self.tray)
         return self.name
 
 
