@@ -107,7 +107,7 @@ class Category(models.Model):
         super(Category, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('ciasta_ciasteczka:category',
+        return reverse('ciasta_ciasteczka:category_details',
                        args=[self.slug])
 
     def is_parent(self):
