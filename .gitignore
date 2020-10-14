@@ -149,4 +149,7 @@ TODO
 kategorie.save
 change_characterset_script
 
+certs/
+certs
+
 
