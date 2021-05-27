@@ -1,13 +1,17 @@
 # Ciasta, Ciasteczka
-Repository for Ciasta Ciasteczka website. 
-## Sites
-* Main site
-* Category page - index of all products contained in category
-* Product page - product information
+Repository for Ciasta Ciasteczka website. It's a local bakery selling custom made pies. 
+
+Link to deployed site [ciastaciasteczka.pl](ciastaciasteczka.pl)
+
 ## Tech Stack
 * Frontend
   * HTML
   * CSS
-  * Pure JS
+  * JS
 * Backend
   * Python Django framework 
+* Database 
+  * MySQL
+* Containerization
+  * Docker
+  * Docker-Compose

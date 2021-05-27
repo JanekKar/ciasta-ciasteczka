@@ -81,15 +81,15 @@ Type
   Monoporcja - po 6 szt. lub 12 szt. (babeczki) zł/6szt
 
 Category:
-- Parent [Torty, Ciasta, Inne Słotkości]
+- Parent [Torty, Ciasta, Inne Słodkości]
 - Name
 - Description
 
-Jeden tort może mieć wiecje niż jedną kategorię❗️❗️
+Jeden tort może mieć więcej niż jedną kategorię❗️❗️
 
 
 Disclaimer:
-- Waga tortu może się różnić, wygląd możę się różńić
+- Waga tortu może się różnić, wygląd może się różnić
 - Alergeny
 - Skład
 
@@ -102,7 +102,7 @@ Rozmiary:
 6szt, 12szt
 Mały tort, Średni, Średni-większy, Duży
 
-Średnia == Ilością osób (jest równoznaczna)
+Średnica == Ilością osób (jest równoznaczna)
 
 
 
